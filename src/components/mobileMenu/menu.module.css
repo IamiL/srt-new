@@ -1,7 +1,4 @@
 #menu {
-    width: 100%;
-    padding-left: 5.55555555556vw;
-    padding-right: 3.42375vw;
     position: absolute;
     width: 100%;
     padding-left: 5.55555555556vw;
@@ -9,7 +6,8 @@
     height: 68.3333333333vw;
     z-index: 5;
     left: 0;
-    background-color: rgba(203, 215, 255);
+    /*background-color: rgba(203, 215, 255);*/
+    background: linear-gradient(180deg, rgba(134, 162, 255, 0.2) 0%, rgba(134, 162, 255, 0.8) 100%);
     align-items: start;
     justify-content: space-between;
     overflow: hidden;
@@ -74,12 +72,7 @@
 
 @media only screen and (max-width: 1366px) {
     .mobileMenuWrapper {
-        background-color: #3E456C;
-        position: absolute;
-        width: 100%;
-        z-index: 5;
-        left: 0;
-        transition: max-height 0.4s ease-in-out;
+
     }
 
     .active {
