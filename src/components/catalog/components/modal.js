@@ -8,147 +8,147 @@ const items = [
         table: ''
     },
     {
-        name: 'Р-180L-380',
-        photo: '/catalog/crusher/Р-180L-380.png',
-        table: '/catalog/crusher/Р-180L-380.svg'
+        name: 'P-180L-380',
+        photo: '/catalog/crusher/P-180L-380.png',
+        table: '/catalog/crusher/P-180L-380.svg'
     },
     {
-        name: 'Р-180L-220',
-        photo: '/catalog/crusher/Р-180L-220.png',
+        name: 'P-180L-220',
+        photo: '/catalog/crusher/P-180L-220.png',
         table: '/catalog/crusher/P-180L-220.svg'
     },
     {
-        name: 'Р-250Р',
-        photo: '/catalog/crusher/Р-250Р.png',
-        table: '/catalog/crusher/Р-250Р.svg'
+        name: 'P-250P',
+        photo: '/catalog/crusher/P-250P.png',
+        table: '/catalog/crusher/P-250P.svg'
     },
     {
-        name: 'Р-250C',
-        photo: '/catalog/crusher/Р-250C.png',
-        table: '/catalog/crusher/Р-250С.svg'
+        name: 'P-250C',
+        photo: '/catalog/crusher/P-250C.png',
+        table: '/catalog/crusher/P-250С.svg'
     },
     {
-        name: 'Р-300L',
-        photo: '/catalog/crusher/Р-300L.png',
+        name: 'P-300L',
+        photo: '/catalog/crusher/P-300L.png',
         table: '/catalog/crusher/p-300L.svg'
     },
     {
-        name: 'Р-300P',
-        photo: '/catalog/crusher/Р-300P.png',
+        name: 'P-300P',
+        photo: '/catalog/crusher/P-300P.png',
         table: '/catalog/crusher/p-300P.svg'
     },
     {
-        name: 'Р-300C',
-        photo: '/catalog/crusher/Р-300C.png',
+        name: 'P-300C',
+        photo: '/catalog/crusher/P-300C.png',
         table: '/catalog/crusher/p-300C.svg'
     },
     {
-        name: 'Р-400L',
-        photo: '/catalog/crusher/Р-400L.png',
+        name: 'P-400L',
+        photo: '/catalog/crusher/P-400L.png',
         table: '/catalog/crusher/p-400L.svg'
     },
     {
-        name: 'Р-400P',
-        photo: '/catalog/crusher/Р-400P.png',
+        name: 'P-400P',
+        photo: '/catalog/crusher/P-400P.png',
         table: '/catalog/crusher/p-400P.svg'
     },
     {
-        name: 'Р-400C',
-        photo: '/catalog/crusher/Р-400C.png',
+        name: 'P-400C',
+        photo: '/catalog/crusher/P-400C.png',
         table: '/catalog/crusher/p-400C.svg'
     },
     {
-        name: 'Р-500L',
-        photo: '/catalog/crusher/Р-500L.png',
+        name: 'P-500L',
+        photo: '/catalog/crusher/P-500L.png',
         table: '/catalog/crusher/p-500L.svg'
     },
     {
-        name: 'Р-500P',
-        photo: '/catalog/crusher/Р-500P.png',
+        name: 'P-500P',
+        photo: '/catalog/crusher/P-500P.png',
         table: '/catalog/crusher/p-500P.svg'
     },
     {
-        name: 'Р-500C',
+        name: 'P-500C',
         photo: '/catalog/crusher/P-500C.png',
         table: '/catalog/crusher/p-500C.svg'
     },
     {
-        name: 'Р-600L',
+        name: 'P-600L',
         photo: '/catalog/crusher/P-600L.png',
         table: '/catalog/crusher/p-600L.svg'
     },
     {
-        name: 'Р-600P',
+        name: 'P-600P',
         photo: '/catalog/crusher/P-600P.png',
         table: '/catalog/crusher/p-600P.svg'
     },
     {
-        name: 'Р-600C',
+        name: 'P-600C',
         photo: '/catalog/crusher/P-600C.png',
         table: '/catalog/crusher/p-600C.svg'
     },
     {
-        name: 'Р-700L',
+        name: 'P-700L',
         photo: '/catalog/crusher/P-700L.png',
         table: '/catalog/crusher/p-700L.svg'
     },
     {
-        name: 'Р-700P',
+        name: 'P-700P',
         photo: '/catalog/crusher/P-700P.png',
         table: '/catalog/crusher/p-700P.svg'
     },
     {
-        name: 'Р-700C',
+        name: 'P-700C',
         photo: '/catalog/crusher/P-700C.png',
         table: '/catalog/crusher/p-700C.svg'
     },
     {
-        name: 'Р-800L',
+        name: 'P-800L',
         photo: '/catalog/crusher/P-800L.png',
         table: '/catalog/crusher/p-800L.svg'
     },
     {
-        name: 'Р-800P',
+        name: 'P-800P',
         photo: '/catalog/crusher/P-800P.png',
         table: '/catalog/crusher/p-800P.svg'
     },
     {
-        name: 'Р-800C',
+        name: 'P-800C',
         photo: '/catalog/crusher/P-800C.png',
         table: '/catalog/crusher/p-800C.svg'
     },
     {
-        name: 'Р-1000L',
+        name: 'P-1000L',
         photo: '/catalog/crusher/P-1000L.png',
         table: '/catalog/crusher/p-1000L.svg'
     },
     {
-        name: 'Р-1000P',
+        name: 'P-1000P',
         photo: '/catalog/crusher/P-1000P.png',
         table: '/catalog/crusher/p-1000P.svg'
     },
     {
-        name: '',
+        name: 'Сушильный шкаф — 360',
         photo: '/catalog/drying/360.png',
         table: '/catalog/drying/360.svg'
     },
     {
-        name: '',
+        name: 'Сушильный шкаф — 480',
         photo: '/catalog/drying/480.png',
         table: '/catalog/drying/480.svg'
     },
     {
-        name: '',
+        name: 'Сушильный шкаф — 576',
         photo: '/catalog/drying/576.png',
         table: '/catalog/drying/576.svg'
     },
     {
-        name: '',
+        name: 'Сушильный шкаф — 960',
         photo: '/catalog/drying/960.png',
         table: '/catalog/drying/960.svg'
     },
     {
-        name: '',
+        name: 'Изоляторы',
         photo: '/catalog/isolators/isolator.png',
         table: '/catalog/isolators/isolators.svg'
     }
@@ -191,7 +191,7 @@ export default function Modal({item, onClose}) {
                             </p>
                         </div>
                         <div className='catalog-modal-content-table-wrapper'>
-                            <h3 className='head1 catalog-modal-sec21-heading'>Основные технические характеристики</h3>
+                            <h3 className='head1 catalog-modal-sec21-heading'>Основные технические хаактеристики</h3>
                             <img src={items[item].table} className='catalog-modal-wrapper-table'/>
                         </div>
                     </section>

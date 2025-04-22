@@ -53,7 +53,7 @@ export default function RotaryCrusher() {
                                 Р-180L-380
                             </h3>
                             <div style={{marginTop: '3.17708333333vw'}}>
-                                <img src='/catalog/crusher/Р-180L-380.png'/>
+                                <img src='/catalog/crusher/P-180L-380.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(2)}>
@@ -61,7 +61,7 @@ export default function RotaryCrusher() {
                                 Р-180L-220
                             </h3>
                             <div style={{marginTop: '3.17708333333vw'}}>
-                                <img src='/catalog/crusher/Р-180L-220.png'/>
+                                <img src='/catalog/crusher/P-180L-220.png'/>
                             </div>
                         </li>
                     </ul>
@@ -74,7 +74,7 @@ export default function RotaryCrusher() {
                                 Р-250Р
                             </h3>
                             <div style={{marginTop: '2.13541666667vw'}}>
-                                <img src='/catalog/crusher/Р-250Р.png'/>
+                                <img src='/catalog/crusher/P-250P.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(4)}>
@@ -82,7 +82,7 @@ export default function RotaryCrusher() {
                                 Р-250C
                             </h3>
                             <div style={{marginTop: '2.13541666667vw'}}>
-                                <img src='/catalog/crusher/Р-250C.png'/>
+                                <img src='/catalog/crusher/P-250C.png'/>
                             </div>
                         </li>
                     </ul>
@@ -95,7 +95,7 @@ export default function RotaryCrusher() {
                                 Р-300L
                             </h3>
                             <div style={{marginTop: '2.23958333333vw'}}>
-                                <img src='/catalog/crusher/Р-300L.png'/>
+                                <img src='/catalog/crusher/P-300L.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(6)}>
@@ -103,7 +103,7 @@ export default function RotaryCrusher() {
                                 Р-300P
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
-                                <img src='/catalog/crusher/Р-300P.png'/>
+                                <img src='/catalog/crusher/P-300P.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(7)}>
@@ -111,7 +111,7 @@ export default function RotaryCrusher() {
                                 Р-300C
                             </h3>
                             <div style={{marginTop: '2.44791666667vw'}}>
-                                <img src='/catalog/crusher/Р-300C.png'/>
+                                <img src='/catalog/crusher/P-300C.png'/>
                             </div>
                         </li>
                     </ul>
@@ -124,7 +124,7 @@ export default function RotaryCrusher() {
                                 Р-400L
                             </h3>
                             <div style={{marginTop: '2.44791666667vw'}}>
-                                <img src='/catalog/crusher/Р-400L.png'/>
+                                <img src='/catalog/crusher/P-400L.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(9)}>
@@ -132,7 +132,7 @@ export default function RotaryCrusher() {
                                 Р-400P
                             </h3>
                             <div style={{marginTop: '1.92708333333vw'}}>
-                                <img src='/catalog/crusher/Р-400P.png'/>
+                                <img src='/catalog/crusher/P-400P.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(10)}>
@@ -140,7 +140,7 @@ export default function RotaryCrusher() {
                                 Р-400C
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
-                                <img src='/catalog/crusher/Р-400C.png'/>
+                                <img src='/catalog/crusher/P-400C.png'/>
                             </div>
                         </li>
                     </ul>
@@ -153,7 +153,7 @@ export default function RotaryCrusher() {
                                 Р-500L
                             </h3>
                             <div style={{marginTop: '2.76041666667vw'}}>
-                                <img src='/catalog/crusher/Р-500L.png'/>
+                                <img src='/catalog/crusher/P-500L.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(12)}>
@@ -161,7 +161,7 @@ export default function RotaryCrusher() {
                                 Р-500P
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
-                                <img src='/catalog/crusher/Р-500P.png'/>
+                                <img src='/catalog/crusher/P-500P.png'/>
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(13)}>
