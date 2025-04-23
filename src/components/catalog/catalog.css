@@ -259,6 +259,7 @@
     align-items: start;
     /*filter: blur(10px);*/
     backdrop-filter: blur(35px);
+    transition: max-height 0.5s, opacity 0.5s;
 }
 
 .catalog-modal {

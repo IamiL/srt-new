@@ -26,9 +26,21 @@
     align-items: end;
     /*margin-right: 6.33333333333vw;*/
     /*position: relative;*/
+    gap: 0.67708333333vw
 }
 
 .navBlock1 {
+    width: 4vw;
+    overflow: visible;
+    display: flex;
+    justify-content: start;
+}
+
+.navBlock2 {
+    width: 4vw;
+    overflow: visible;
+    display: flex;
+    justify-content: start;
 }
 
 .navInternalBlock {
@@ -42,14 +54,17 @@
     /*transform: scaleY(0) translateY(-20vw);*/
 }
 
+/*.navInternalBlock > li */
+
 .navInternalBlock1Wrapper {
-    width: 2vw;
-    transition: opacity 0.3s, transform 0.3s;
+    /*width: 2vw;*/
+    transition: opacity 0.3s 0.1s, transform 0.3s 0.5s;
     transform-origin: 0 0;
     opacity: 0;
     display: flex;
     justify-content: end;
     transform: scaleY(0);
+    width: 0;
 }
 
 .navInternalLink {
@@ -57,12 +72,49 @@
     font-size: 1vw;
     font-weight: 900;
     white-space: nowrap;
+    position: relative;
+    /*display: flex;*/
+    /*justify-content: start;*/
+}
+
+.navInternalLink::after, .navInternalBlockElement > .navInternalLink::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.05208333333vw;
+    background: #FFFFFF;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.4s ease;
+}
+
+.navInternalLink:hover::after, .navInternalBlockElement:hover > .navInternalLink::after {
+    transform: scaleX(1);
 }
 
 .navInternalNavlinkWrapper {
-    display: flex;
-    gap: 2vw;
+    /*display: flex;*/
+    gap: 1.25vw;
+    /*height: 0.9375vw;*/
+    height: 1.5vw;
+    display: inline-flex;
+    align-items: center;
 }
+
+.navInternalNavlinkWrapper > div {
+    display: inline-flex;
+    width: 1vw;
+    height: 100%;
+    align-items: center;
+}
+
+/*.navInternalNavlinkWrapper > p {*/
+/*    display: inline-flex;*/
+/*    height: 100%;*/
+/*    align-items: center;*/
+/*}*/
 
 #navInternalBlock1 {
     /*padding-top: 1vw;*/
@@ -89,16 +141,26 @@
     /*display: block;*/
 }
 
-#nav1:hover ~ .navInternalBlock1Wrapper {
+.navLink, #nav > a {
+    transition: color 0.3s;
+}
+
+.navblock:hover > .navLink, #nav > a:hover {
+    color: #86A2FF;
+    transition: color 0.3s;
+}
+
+.navblock:hover > .navInternalBlock1Wrapper {
     /*transform: scaleY(1) translateY(0);*/
     opacity: 1;
     transform: scaleY(1);
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-.navInternalBlock1Wrapper:hover {
-    opacity: 1;
-    transform: scaleY(1);
-}
+/*.navInternalBlock1Wrapper:hover {*/
+/*    opacity: 1;*/
+/*    transform: scaleY(1);*/
+/*}*/
 
 #nav2 {
     /*width: 6.71875vw;*/
