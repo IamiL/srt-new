@@ -191,7 +191,7 @@ export default function Modal({item, onClose}) {
                             </p>
                         </div>
                         <div className='catalog-modal-content-table-wrapper'>
-                            <h3 className='head1 catalog-modal-sec21-heading'>Основные технические хаактеристики</h3>
+                            <h3 className='head1 catalog-modal-sec21-heading'>Основные технические характеристики</h3>
                             <img src={items[item].table} className='catalog-modal-wrapper-table'/>
                         </div>
                     </section>
