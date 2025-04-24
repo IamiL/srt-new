@@ -1,11 +1,18 @@
 import "./../catalog.css"
-import {useState} from "react";
+import {StrictMode, useEffect, useState} from "react";
 import Portal from "@/components/catalog/components/portal";
 
 export default function RotaryCrusher() {
-    const [modalOpen, setModalOpen] = useState(0)
+    const [modalItem, setModalItem] = useState(1)
+
+    const [modal1Open, setModal1Open] = useState(false)
+
+    useEffect(() => {
+        console.log("isOpen - ", modal1Open)
+    }, [modal1Open])
+    
     return (
-        <>
+        <StrictMode>
             <h1 className='heading1 catalogp-heading'>Дробилка Роторная</h1>
             <section className='base_grid catalog-main-sec'>
                 <div className='catalog_main_img1 adli'><img src='/catalog/crusher/crusher2.png'/></div>
@@ -48,7 +55,11 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 180</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(1)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModalItem(1);
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}>
                             <h3 className='head1'>
                                 Р-180L-380
                             </h3>
@@ -56,7 +67,11 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-180L-380.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(2)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModalItem(2);
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}>
                             <h3 className='head1'>
                                 Р-180L-220
                             </h3>
@@ -292,9 +307,7 @@ export default function RotaryCrusher() {
                     <li className='catalog_gal_item4'><img src='/catalog/crusher/gal4.png'/></li>
                 </ul>
             </section>
-            {
-                modalOpen !== 0 && <Portal item={modalOpen} Close={() => setModalOpen(0)}/>
-            }
-        </>
+            <Portal item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
+        </StrictMode>
     );
 }

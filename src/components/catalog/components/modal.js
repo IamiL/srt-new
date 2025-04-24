@@ -1,5 +1,4 @@
 import "./../catalog.css"
-import {useEffect, useRef} from "react";
 
 const items = [
     {
@@ -154,49 +153,31 @@ const items = [
     }
 ]
 
-export default function Modal({item, onClose}) {
+export default function Modal({item}) {
 
     // if (item !== 0) {
     //     document.body.style.overflow = "hidden";
     // }
 
-    const ref = useRef()
-    useEffect(() => {
-        document.body.style.overflow = "hidden";
-        // document.body.style.backdropFilter = "blur(10px)";
-        const checkIfClickedOutside = e => {
-            if (ref.current && !ref.current.contains(e.target)) {
-                onClose()
-            }
-        }
-        document.addEventListener("click", checkIfClickedOutside)
-        return () => {
-            document.removeEventListener("click", checkIfClickedOutside)
-            document.body.style.overflow = "visible";
-        }
-    }, [onClose])
-
     return (
-        <div className='catalog-modal-wrapper'>
-            <div className='catalog-modal-container' ref={ref}>
-                <div className='catalog-modal'>
-                    <h2 className='heading2'>{items[item].name}</h2>
-                    <section className='catalog-modal-content'>
-                        <div className='catalog-modal-sec11'>
-                            <div className='catalog-model-img'>
-                                <img src={items[item].photo}/>
-                            </div>
-                            <p>
-                                {/*Описание*/}
-                            </p>
-                        </div>
-                        <div className='catalog-modal-content-table-wrapper'>
-                            <h3 className='head1 catalog-modal-sec21-heading'>Основные технические характеристики</h3>
-                            <img src={items[item].table} className='catalog-modal-wrapper-table'/>
-                        </div>
-                    </section>
+
+        <>
+            <h2 className='heading2'>{items[item].name}</h2>
+            <section className='catalog-modal-content'>
+                <div className='catalog-modal-sec11'>
+                    <div className='catalog-model-img'>
+                        <img src={items[item].photo}/>
+                    </div>
+                    <p>
+                        {/*Описание*/}
+                    </p>
                 </div>
-            </div>
-        </div>
+                <div className='catalog-modal-content-table-wrapper'>
+                    <h3 className='head1 catalog-modal-sec21-heading'>Основные технические
+                        характеристики</h3>
+                    <img src={items[item].table} className='catalog-modal-wrapper-table'/>
+                </div>
+            </section>
+        </>
     )
 }

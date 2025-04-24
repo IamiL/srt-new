@@ -49,8 +49,8 @@ export default function Contacts({enLan}) {
                 <a href="mailto:logistica@povpro.ru">
                     logistica@povpro.ru
                 </a>
-                <a href="tel:+79376642950">
-                    +7 (937) 664-29-50
+                <a href="tel:+79276573030">
+                    +7 (927) 657-30-30
                 </a>
             </div>
         </div>
