@@ -1,18 +1,24 @@
 import "./../catalog.css"
 import {StrictMode, useEffect, useState} from "react";
 import Portal from "@/components/catalog/components/portal";
+import GalleryPortal from "@/components/catalog/components/gallery-portal";
 
 export default function RotaryCrusher() {
     const [modalItem, setModalItem] = useState(1)
 
-    const [modal1Open, setModal1Open] = useState(false)
+    const [modal1Open, setModal1Open] = useState(null)
+
+
+    const [modal2Item, setModal2Item] = useState(0)
+
+    const [modal2Open, setModal2Open] = useState(null)
 
     useEffect(() => {
         console.log("isOpen - ", modal1Open)
     }, [modal1Open])
-    
+
     return (
-        <StrictMode>
+        typeof document !== 'undefined' && <StrictMode>
             <h1 className='heading1 catalogp-heading'>Дробилка Роторная</h1>
             <section className='base_grid catalog-main-sec'>
                 <div className='catalog_main_img1 adli'><img src='/catalog/crusher/crusher2.png'/></div>
@@ -55,11 +61,15 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 180</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
-                            setModalItem(1);
-                            setModal1Open(true);
-                            document.body.style.overflow = "hidden";
-                        }}>
+                        <li className='catalog_item1 catalog_item_left adli'
+                            onClick={() => {
+                                setModal1Open(true);
+                                document.body.style.overflow = "hidden";
+                            }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(1)
+                            }}>
                             <h3 className='head1'>
                                 Р-180L-380
                             </h3>
@@ -68,10 +78,13 @@ export default function RotaryCrusher() {
                             </div>
                         </li>
                         <li className='catalog_item1 catalog_item_center adli' onClick={() => {
-                            setModalItem(2);
                             setModal1Open(true);
                             document.body.style.overflow = "hidden";
-                        }}>
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(2)
+                            }}>
                             <h3 className='head1'>
                                 Р-180L-220
                             </h3>
@@ -84,7 +97,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 250</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(3)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(3)
+                            }}>
                             <h3 className='head1'>
                                 Р-250Р
                             </h3>
@@ -92,7 +112,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-250P.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(4)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(4)
+                            }}>
                             <h3 className='head1'>
                                 Р-250C
                             </h3>
@@ -105,7 +132,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 300</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(5)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(5)
+                            }}>
                             <h3 className='head1'>
                                 Р-300L
                             </h3>
@@ -113,7 +147,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-300L.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(6)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(6)
+                            }}>
                             <h3 className='head1'>
                                 Р-300P
                             </h3>
@@ -121,7 +162,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-300P.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(7)}>
+                        <li className='catalog_item1 catalog_item_right adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(7)
+                            }}>
                             <h3 className='head1'>
                                 Р-300C
                             </h3>
@@ -134,7 +182,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 400</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(8)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(8)
+                            }}>
                             <h3 className='head1'>
                                 Р-400L
                             </h3>
@@ -142,7 +197,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-400L.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(9)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(9)
+                            }}>
                             <h3 className='head1'>
                                 Р-400P
                             </h3>
@@ -150,7 +212,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-400P.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(10)}>
+                        <li className='catalog_item1 catalog_item_right adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(10)
+                            }}>
                             <h3 className='head1'>
                                 Р-400C
                             </h3>
@@ -163,7 +232,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 500</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(11)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(11)
+                            }}>
                             <h3 className='head1'>
                                 Р-500L
                             </h3>
@@ -171,7 +247,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-500L.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(12)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(12)
+                            }}>
                             <h3 className='head1'>
                                 Р-500P
                             </h3>
@@ -179,7 +262,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-500P.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(13)}>
+                        <li className='catalog_item1 catalog_item_right adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(13)
+                            }}>
                             <h3 className='head1'>
                                 Р-500C
                             </h3>
@@ -192,7 +282,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 600</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(14)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(14)
+                            }}>
                             <h3 className='head1'>
                                 Р-600L
                             </h3>
@@ -200,7 +297,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-600L.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(15)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(15)
+                            }}>
                             <h3 className='head1'>
                                 Р-600P
                             </h3>
@@ -208,7 +312,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-600P.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(16)}>
+                        <li className='catalog_item1 catalog_item_right adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(16)
+                            }}>
                             <h3 className='head1'>
                                 Р-600C
                             </h3>
@@ -221,7 +332,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 700</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(17)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(17)
+                            }}>
                             <h3 className='head1'>
                                 Р-700L
                             </h3>
@@ -229,7 +347,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-700L.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(18)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(18)
+                            }}>
                             <h3 className='head1'>
                                 Р-700P
                             </h3>
@@ -237,7 +362,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-700P.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(19)}>
+                        <li className='catalog_item1 catalog_item_right adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(19)
+                            }}>
                             <h3 className='head1'>
                                 Р-700C
                             </h3>
@@ -250,7 +382,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 800</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(20)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(20)
+                            }}>
                             <h3 className='head1'>
                                 Р-800L
                             </h3>
@@ -258,7 +397,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-800L.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(21)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(21)
+                            }}>
                             <h3 className='head1'>
                                 Р-800P
                             </h3>
@@ -266,7 +412,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-800P.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_right adli' onClick={() => setModalOpen(22)}>
+                        <li className='catalog_item1 catalog_item_right adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(22)
+                            }}>
                             <h3 className='head1'>
                                 Р-800C
                             </h3>
@@ -279,7 +432,14 @@ export default function RotaryCrusher() {
                 <div className='catalog-items-sec'>
                     <h2 className='head1 catalog-item-heading'>Р — 1000</h2>
                     <ul className='base_grid catalog_items'>
-                        <li className='catalog_item1 catalog_item_left adli' onClick={() => setModalOpen(23)}>
+                        <li className='catalog_item1 catalog_item_left adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(23)
+                            }}>
                             <h3 className='head1'>
                                 Р-1000L
                             </h3>
@@ -287,7 +447,14 @@ export default function RotaryCrusher() {
                                 <img src='/catalog/crusher/P-1000L.png'/>
                             </div>
                         </li>
-                        <li className='catalog_item1 catalog_item_center adli' onClick={() => setModalOpen(24)}>
+                        <li className='catalog_item1 catalog_item_center adli' onClick={() => {
+                            setModal1Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                            onMouseEnter={() => {
+                                console.log('навели на первого');
+                                setModalItem(24)
+                            }}>
                             <h3 className='head1'>
                                 Р-1000P
                             </h3>
@@ -301,12 +468,52 @@ export default function RotaryCrusher() {
             <section>
                 <h2 className='head1 catalog_gal_heading'>Галерея</h2>
                 <ul className='base_grid'>
-                    <li className='catalog_gal_item1'><img src='/catalog/crusher/gal1.png'/></li>
-                    <li className='catalog_gal_item2'><img src='/catalog/crusher/gal2.png'/></li>
-                    <li className='catalog_gal_item3'><img src='/catalog/crusher/gal3.png'/></li>
-                    <li className='catalog_gal_item4'><img src='/catalog/crusher/gal4.png'/></li>
+                    <li className='catalog_gal_item1 gallery-item'
+                        onClick={() => {
+                            // setModalItem(1);
+                            setModal2Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                        onMouseEnter={() => {
+                            console.log('навели на первую фотку');
+                            setModal2Item(1)
+                        }}>
+                        <img src='/catalog/crusher/gal1.png' alt='photo'/>
+                    </li>
+                    <li className='catalog_gal_item2 gallery-item'
+                        onClick={() => {
+                            // setModalItem(1);
+                            setModal2Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                        onMouseEnter={() => {
+                            console.log('навели на первую фотку');
+                            setModal2Item(2)
+                        }}>
+                        <img src='/catalog/crusher/gal2.png'/></li>
+                    <li className='catalog_gal_item3 gallery-item' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            console.log('навели на первую фотку');
+                            setModal2Item(3)
+                        }}>
+                        <img src='/catalog/crusher/gal3.png'/></li>
+                    <li className='catalog_gal_item4 gallery-item' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            console.log('навели на первую фотку');
+                            setModal2Item(4)
+                        }}>
+                        <img src='/catalog/crusher/gal4.png'/></li>
                 </ul>
             </section>
+            <GalleryPortal catalogNumber={0} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>
             <Portal item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
         </StrictMode>
     );

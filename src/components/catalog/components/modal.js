@@ -160,7 +160,6 @@ export default function Modal({item}) {
     // }
 
     return (
-
         <>
             <h2 className='heading2'>{items[item].name}</h2>
             <section className='catalog-modal-content'>

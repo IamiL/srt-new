@@ -2,7 +2,7 @@ import {createPortal} from "react-dom";
 import Modal from "@/components/catalog/components/modal";
 import {useRef} from "react";
 
-export default function Portal({item, isOpen, close, setIsOpen}) {
+export default function Portal({item, isOpen, setIsOpen}) {
     // const [mounted, setMounted] = useState(false)
     //
     // useEffect(() => {
@@ -36,16 +36,30 @@ export default function Portal({item, isOpen, close, setIsOpen}) {
     //     // }
     // }, [isOpen])
 
-    return createPortal(
-        <div className='catalog-modal-wrapper' style={isOpen ? {maxHeight: '100vh'} : {maxHeight: '0'}}
-             onClick={(e) => {
-                 if (ref.current && !ref.current.contains(e.target)) {
-                     setIsOpen(false);
-                     document.body.style.overflow = "visible";
-                 }
-             }}>
-            <div className='catalog-modal-container' ref={ref}>
-                <div className='catalog-modal'>
+    return (item !== 0) && createPortal(
+        <div
+            className={`catalog-modal-wrapper ${isOpen === null ? '' : isOpen ? 'catalog-modal-wrapper-open' : 'catalog-modal-wrapper-close'}`}
+            // style={isOpen ? {maxHeight: '100vh'} : {maxHeight: '0'}}
+            onClick={(e) => {
+                if (ref.current && !ref.current.contains(e.target)) {
+                    setIsOpen(false);
+                    document.body.style.overflow = "visible";
+                }
+            }}>
+            <div className={`catalog-modal-container`}
+                 ref={ref}>
+                <div className={`catalog-modal ${isOpen ? 'catalog-modal-open' : 'catalog-modal-close'}`}>
+                    <button className='catalog-modal-close-button' onClick={() => {
+                        setIsOpen(false);
+                        document.body.style.overflow = "visible";
+                    }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="96" height="96"
+                             color="#ffffff"
+                             fill="none">
+                            <path d="M19.0005 4.99988L5.00049 18.9999M5.00049 4.99988L19.0005 18.9999" stroke="#ffffff"
+                                  strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"></path>
+                        </svg>
+                    </button>
                     <Modal item={item}/>
                 </div>
             </div>
