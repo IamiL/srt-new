@@ -1,5 +1,5 @@
 import CsrSsrWrapper from "@/csr/csrSsrWrapper";
 
-export default function DryingCabinets() {
+export default function Cases() {
     return <body><CsrSsrWrapper/></body>
 }

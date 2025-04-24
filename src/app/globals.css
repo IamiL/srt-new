@@ -35,21 +35,26 @@ body {
     --color-gradient-start: #86a2ff00;
     --color-gradient-end: #86a2ff6c;
     position: relative;
+    background-color: #3E456C;
+}
+
+#start {
     animation-name: bl;
     animation-duration: 2.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    overflow-y: hidden;
 }
 
 @keyframes bl {
     0% {
-        /*background-color: rgba(203, 215, 255, 1);*/
-        background-color: #3E456C;
+        background-color: rgba(203, 215, 255, 1);
+        /*background-color: #3E456C;*/
     }
 
     70% {
-        /*background-color: rgba(203, 215, 255, 1);*/
-        background-color: #3E456C;
+        background-color: rgba(203, 215, 255, 1);
+        /*background-color: #3E456C;*/
     }
 
     to {

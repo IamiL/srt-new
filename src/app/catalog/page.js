@@ -1,5 +1,5 @@
 import CsrSsrWrapper from "@/csr/csrSsrWrapper";
 
 export default function Catalog() {
-  return <CsrSsrWrapper />
+    return <body><CsrSsrWrapper/></body>
 }

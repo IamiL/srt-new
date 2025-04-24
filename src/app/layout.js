@@ -1,4 +1,3 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 
@@ -22,12 +21,10 @@ const ablation2 = localFont({src: './fonts/AblationBlack.otf', variable: '--font
 const sfPro = localFont({src: './fonts/SF-Pro-Display-Light.otf', variable: '--font-sfPro'})
 const inter = localFont({src: './fonts/Inter.ttf', variable: '--font-inter'})
 
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en" className={`${inter.variable} ${ablation.variable} ${ablation2.variable} ${sfPro.variable}`}>
-      <body>
+export default function RootLayout({children}) {
+    return (
+        <html lang="en" className={`${inter.variable} ${ablation.variable} ${ablation2.variable} ${sfPro.variable}`}>
         {children}
-      </body>
-    </html>
-  );
+        </html>
+    );
 }

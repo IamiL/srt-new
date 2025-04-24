@@ -1,8 +1,10 @@
 import CsrSsrWrapper from "@/csr/csrSsrWrapper";
+import Loading from "@/components/loading/loading";
 
 export default function Home() {
-    return (<>
-            <CsrSsrWrapper/>
-        </>
+    return (<body id='start'>
+        <Loading/>
+        <CsrSsrWrapper/>
+        </body>
     );
 }
