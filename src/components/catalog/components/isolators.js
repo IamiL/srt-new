@@ -1,11 +1,19 @@
 import "./../catalog.css"
 import {useState} from "react";
 import Portal from "@/components/catalog/components/portal";
+import GalleryPortal from "@/components/catalog/components/gallery-portal";
 
 export default function Isolators() {
-    const [modalOpen, setModalOpen] = useState(0)
+    const [modalItem, setModalItem] = useState(1)
+
+    const [modal1Open, setModal1Open] = useState(null)
+
+
+    const [modal2Item, setModal2Item] = useState(0)
+
+    const [modal2Open, setModal2Open] = useState(null)
     return (
-        <>
+        typeof document !== 'undefined' && <>
             <h1 className='heading1 catalogp-heading'>Изоляторы</h1>
             <section className='base_grid catalog-main-sec'>
                 <div className='catalog_main_img2 adli'>
@@ -29,7 +37,14 @@ export default function Isolators() {
             </section>
             <section className='catalog-sec23'>
                 <ul className='base_grid catalog_items'>
-                    <li className='catalog_item4 catalog_item_left adli' onClick={() => setModalOpen(29)}>
+                    <li className='catalog_item4 catalog_item_left adli' onClick={() => {
+                        setModal1Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            console.log('навели на первого');
+                            setModalItem(29)
+                        }}>
                         <h2 className='head1'>
                             Изоляторы
                         </h2>
@@ -39,9 +54,8 @@ export default function Isolators() {
                     </li>
                 </ul>
             </section>
-            {
-                modalOpen !== 0 && <Portal item={modalOpen} Close={() => setModalOpen(0)}/>
-            }
+            <GalleryPortal catalogNumber={1} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>
+            <Portal item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
         </>
     );
 }

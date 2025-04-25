@@ -1,11 +1,20 @@
 import "./../catalog.css"
 import {useState} from "react";
 import Portal from "@/components/catalog/components/portal";
+import GalleryPortal from "@/components/catalog/components/gallery-portal";
 
 export default function DryingCabinets() {
-    const [modalOpen, setModalOpen] = useState(0)
+    const [modalItem, setModalItem] = useState(1)
+
+    const [modal1Open, setModal1Open] = useState(null)
+
+
+    const [modal2Item, setModal2Item] = useState(0)
+
+    const [modal2Open, setModal2Open] = useState(null)
+
     return (
-        <>
+        typeof document !== 'undefined' && <>
             <h1 className='heading1 catalogp-heading'>Сушильные шкафы</h1>
             <section className='base_grid catalog-main-sec'>
                 <div className='catalog_main_img2 adli'><img src='/catalog/drying/drying2.png'/></div>
@@ -34,7 +43,14 @@ export default function DryingCabinets() {
             </section>
             <section className='catalog-sec22'>
                 <ul className='base_grid catalog_items'>
-                    <li className='catalog_item2 catalog_item_left adli' onClick={() => setModalOpen(25)}>
+                    <li className='catalog_item2 catalog_item_left adli' onClick={() => {
+                        setModal1Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            console.log('навели на первого');
+                            setModalItem(25)
+                        }}>
                         <h2 className='head1'>
                             Сушильный шкаф — 360
                         </h2>
@@ -42,7 +58,14 @@ export default function DryingCabinets() {
                             <img src='/catalog/drying/360.png'/>
                         </div>
                     </li>
-                    <li className='catalog_item2 catalog_item_center adli' onClick={() => setModalOpen(26)}>
+                    <li className='catalog_item2 catalog_item_center adli' onClick={() => {
+                        setModal1Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            console.log('навели на первого');
+                            setModalItem(26)
+                        }}>
                         <h2 className='head1'>
                             Сушильный шкаф — 480
                         </h2>
@@ -50,7 +73,14 @@ export default function DryingCabinets() {
                             <img src='/catalog/drying/480.png'/>
                         </div>
                     </li>
-                    <li className='catalog_item3 catalog_item_right adli' onClick={() => setModalOpen(27)}>
+                    <li className='catalog_item3 catalog_item_right adli' onClick={() => {
+                        setModal1Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            console.log('навели на первого');
+                            setModalItem(27)
+                        }}>
                         <h2 className='head1'>
                             Сушильный шкаф — 576
                         </h2>
@@ -58,7 +88,14 @@ export default function DryingCabinets() {
                             <img src='/catalog/drying/576.png'/>
                         </div>
                     </li>
-                    <li className='catalog_item2 catalog_item_left adli' onClick={() => setModalOpen(28)}>
+                    <li className='catalog_item2 catalog_item_left adli' onClick={() => {
+                        setModal1Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            console.log('навели на первого');
+                            setModalItem(28)
+                        }}>
                         <h2 className='head1'>
                             Сушильный шкаф — 960
                         </h2>
@@ -79,9 +116,8 @@ export default function DryingCabinets() {
                     <li className='catalog_gal_item6'><img src='/catalog/drying/gal6.png'/></li>
                 </ul>
             </section>
-            {
-                modalOpen !== 0 && <Portal item={modalOpen} Close={() => setModalOpen(0)}/>
-            }
+            <GalleryPortal catalogNumber={1} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>
+            <Portal item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
         </>
     );
 }

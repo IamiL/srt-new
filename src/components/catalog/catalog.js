@@ -39,7 +39,7 @@ export default function Catalog() {
                         </Link>
                     </li>
                     <li className='catalogp_item catalogp_item_left catalogp_item_padding1 adli'>
-                        <Link to='/isolators'>
+                        <Link to='/catalog/isolators'>
                             <h2 className='catalogp_item3_heading heading2'>
                                 Изоляторы
                             </h2>
