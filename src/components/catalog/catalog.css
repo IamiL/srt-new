@@ -483,10 +483,12 @@
     border: none;
     cursor: pointer;
     height: 5vw;
+    width: 5vw;
 }
 
 .catalog-modal-close-button > svg {
     height: 100%;
+    width: 100%;
 }
 
 .catalog-modal-close {
