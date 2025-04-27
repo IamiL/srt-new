@@ -58,16 +58,21 @@ export default function MobileMenu({enLan}) {
                     </button>
                 </div>
 
-                <Navigation enLan={enLan} setMenu={setMenu}/>
+                <Navigation enLan={enLan} setMenu={setMenu} menu={menu}/>
             </div>
             {/*</div>*/}
         </Portal>
     </>
 }
 
-function Navigation({enLan, setMenu}) {
+function Navigation({enLan, setMenu, menu}) {
+
     const [block1Open, setBlock1Open] = useState(false)
     const [block2Open, setBlock2Open] = useState(false)
+    useEffect(() => {
+        setBlock1Open(false);
+        setBlock2Open(false);
+    }, [menu])
     let navigate = useNavigate();
     if (enLan === true) {
         return <nav id={styles.nav}>
@@ -91,10 +96,12 @@ function Navigation({enLan, setMenu}) {
             </button>
             <div
                 className={`${styles.navLinksWrapper} ${styles.navLinksWrapper1} ${block1Open ? styles.navLinksWrapperOpen : styles.navLinksWrapperClose}`}>
-                <Link to={`/#advantages`}
+                <Link to={`/#advantages`} onClick={() => setMenu(false)}
                       className={`${styles.a} ${styles.navInternalLink}`}>Преимущества</Link>
-                <Link to={`/#capabilities`} className={`${styles.a} ${styles.navInternalLink}`}>Возможности</Link>
-                <Link to={`/#industrial_robots`} className={`${styles.a} ${styles.navInternalLink}`}>Промышленные
+                <Link to={`/#capabilities`} onClick={() => setMenu(false)}
+                      className={`${styles.a} ${styles.navInternalLink}`}>Возможности</Link>
+                <Link to={`/#industrial_robots`} onClick={() => setMenu(false)}
+                      className={`${styles.a} ${styles.navInternalLink}`}>Промышленные
                     роботы</Link>
             </div>
             <br/>
@@ -105,15 +112,15 @@ function Navigation({enLan, setMenu}) {
             <Link className={`${styles.a}`} to={`/manufacturing`} id={styles.nav4}>Производство</Link>
             <br/>
 
-            <button className={`${styles.a} ${styles.navLinkBtn}`} onClick={() => setBlock2Open(!block2Open)}>Каталог
+            <button className={`${styles.a} ${styles.navLinkBtn}`} onClick={() => setBlock2Open(!block2Open)}>
+                Каталог
             </button>
             <div
                 className={`${styles.navLinksWrapper} ${block2Open ? styles.navLinksWrapperOpen : styles.navLinksWrapperClose}`}>
-                <a to={`catalog/rotary-crusher`} onClick={() => {
+                <Link to={`catalog/rotary-crusher`} onClick={() => {
                     setMenu(false);
-                    navigate(`catalog/rotary-crusher`);
                 }}
-                   className={`${styles.a} ${styles.menuNavInternalLink} ${styles.menuNavInternalNavlinkWrapper}`}>
+                      className={`${styles.a} ${styles.menuNavInternalLink} ${styles.menuNavInternalNavlinkWrapper}`}>
                     <div>
                         <svg width="14" height="18" viewBox="0 0 14 18" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +152,7 @@ function Navigation({enLan, setMenu}) {
                         </svg>
                     </div>
                     <p>Дробилка роторная</p>
-                </a>
+                </Link>
                 <Link to={`catalog/isolators`} onClick={() => setMenu(false)}
                       className={`${styles.a} ${styles.menuNavInternalLink} ${styles.menuNavInternalNavlinkWrapper}`}>
                     <div>
