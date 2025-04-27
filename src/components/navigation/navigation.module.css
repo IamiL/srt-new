@@ -181,6 +181,7 @@
     /*width: 3vw;*/
     height: 100%;
     /*width: 4.58333333333vw;*/
+    white-space: nowrap;
 }
 
 #nav5:hover ~ .navInternalBlock1Wrapper {
