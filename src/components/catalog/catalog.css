@@ -636,6 +636,43 @@ catalog-modal-wrapper-gallery-open {
 }
 
 @media only screen and (max-width: 767px) {
+    .catalog-main-sec {
+        margin-top: 8.333333333vw;
+    }
+
+    .catalog_main_img1 {
+        aspect-ratio: unset;
+    }
+
+    .catalog_main_text1-span {
+        font-size: 3.333333333vw;
+    }
+
+    .catalog_main_text1-list {
+        font-size: 2.777777778vw;
+    }
+
+    .catalog_input-wrapper {
+        grid-template-rows: 6.666666667vw auto;
+        border: none;
+    }
+
+    .catalog_input-area {
+        height: 6.666666667vw;
+        aspect-ratio: unset;
+        border-radius: 8.333333333vw;
+        padding-left: 1.944444444vw;
+        gap: 1.111111111vw
+    }
+
+    .catalog_input-area::before {
+        border-radius: 8.333333333vw;
+    }
+
+    .catalog_input-area > svg {
+        width: 4.166666667vw;
+    }
+
     .catalog_main_img1, .catalog_main_text1, .catalog_main_img2, .catalog_main_text2 {
         grid-column: 1 / 7;
     }
@@ -682,4 +719,71 @@ catalog-modal-wrapper-gallery-open {
         grid-column-end: 7;
     }
 
+    .catalog-modal-container {
+        height: 161.388888889vw;
+        width: 76.944444444vw;
+        border-radius: 4.166666667vw;
+    }
+
+    .catalog-modal {
+        height: 161.388888889vw;
+        padding-top: 6.944444444vw;
+        padding-left: 5.555555556vw;
+        padding-right: 5.555555556vw;
+        padding-bottom: 7.5vw;
+    }
+
+    .catalog-modal-content {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4.444444444vw;
+        gap: 2.777777778vw;
+    }
+
+    .catalog-modal-sec11 {
+        width: 100%;
+    }
+
+    .catalog-model-img {
+        width: 100%;
+    }
+
+    .catalog-modal-content-table-wrapper {
+        width: 100%;
+    }
+
+    .catalog-modal-wrapper-table {
+        width: 100%;
+        aspect-ratio: unset;
+    }
+
+    .catalog-modal-close-button {
+        height: 10vw;
+        width: 10vw;
+    }
+
+    .catalog-modal > h2 {
+        font-size: 3.888888889vw !important;
+    }
+
+    .catalog-modal-content-table-wrapper > h3 {
+        font-size: 2.777777778vw;
+    }
+
+    .catalog_item1 {
+        border-radius: 4.166666667vw;
+        padding-top: 3.055555556vw;
+        padding-left: 6.666666667vw;
+        padding-right: 6.666666667vw;
+    }
+
+    .catalog_item1::before {
+        border-radius: 4.166666667vw;
+    }
+
+    .catalog_items > li > div {
+        width: 100%;
+        border-radius: 4.166666667vw;
+        overflow: hidden;
+    }
 }
