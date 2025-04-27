@@ -399,6 +399,12 @@
     }
 }
 
+@media (max-width: 1366px) and (max-height: 48.8vw) {
+    .catalog-modal-wrapper {
+        align-items: start;
+    }
+}
+
 .catalog-modal-wrapper-close {
     animation-name: catalog-modal-wrapper-close;
     animation-duration: 0.3s;
