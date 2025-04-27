@@ -25,7 +25,7 @@ export default function Slider() {
         </div>
         <div id={styles.btns}>
             <div>
-                <button id={styles.btn_left} style={iPhoto == 0 ? {opacity: 0, cursor: "default"} : null}
+                <button id={styles.btn_left} style={iPhoto === 0 ? {opacity: 0, cursor: "default"} : null}
                         onClick={iPhoto > 0 ? () => setIPhoto(iPhoto - 1) : null}>
                     <svg viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_315_3153)">
@@ -58,7 +58,7 @@ export default function Slider() {
                 </button>
 
                 <button id={styles.btn_right}
-                        style={iPhoto == 4 ? {opacity: 0, cursor: "default"} : null}
+                        style={iPhoto === 4 ? {opacity: 0, cursor: "default"} : null}
                         onClick={iPhoto < 4 ? () => setIPhoto(iPhoto + 1) : null}>
                     <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_315_3158)">

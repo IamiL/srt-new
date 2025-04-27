@@ -1,19 +1,31 @@
 import "./../catalog.css"
-import {StrictMode, useEffect, useState} from "react";
+import {StrictMode, useEffect, useRef, useState} from "react";
 import Portal from "@/components/catalog/components/portal";
 import GalleryPortal from "@/components/catalog/components/gallery-portal";
 
-const initialArray = [
-    'P-180L-380', 'P-180L-220', 'P-250P', 'P-250C', 'P-300L', 'P-300P', 'Р-300C', 'Р-400L', 'Р-400L', 'Р-400P',
-    'Р-400C', 'Р-500L', 'Р-500P', 'Р-500C', 'Р-600L', 'Р-600P', 'Р-600C', 'Р-700L', 'Р-700P', 'Р-700C', 'Р-800L', 'Р-800P', 'Р-800C', 'Р-1000L', 'Р-1000P'
-]
-
 
 export default function RotaryCrusher() {
+    const initialArray = [
+        'P-180L-380', 'P-180L-220', 'P-250P', 'P-250C', 'P-300L', 'P-300P', 'P-300C', 'P-400L', 'P-400P',
+        'P-400C', 'P-500L', 'P-500P', 'P-500C', 'P-600L', 'P-600P', 'P-600C', 'P-700L', 'P-700P', 'P-700C', 'P-800L', 'P-800P', 'P-800C', 'P-1000L', 'P-1000P'
+    ]
+
+    const refsArray = [useRef(null),
+        useRef(null),
+        useRef(null),
+        useRef(null),
+        useRef(null),
+        useRef(null), useRef(null), useRef(null),
+        useRef(null), useRef(null), useRef(null),
+        useRef(null), useRef(null), useRef(null),
+        useRef(null), useRef(null), useRef(null),
+        useRef(null), useRef(null), useRef(null),
+    ]
+
     const [searchQuery, setSearchQuery] = useState('');
     const [searchOpen, setSearchOpen] = useState(null)
 
-    const [search, setSearch] = useState([initialArray]);
+    const [search, setSearch] = useState(initialArray);
 
     const [modalItem, setModalItem] = useState(1)
 
@@ -32,8 +44,40 @@ export default function RotaryCrusher() {
     };
 
     useEffect(() => {
-        console.log("isOpen - ", modal1Open)
+        ////console.log("isOpen - ", modal1Open)
     }, [modal1Open])
+
+    const rootRef = useRef(null);
+    const inputRef = useRef(null);
+
+    useEffect(() => {
+        const handleClick = (event) => {
+            const {target} = event;
+            if (target instanceof Node && !rootRef.current?.contains(target)) {
+                // isOpen && onClose?.();
+                setSearchOpen(false);
+                ////console.log('клик 1')
+            } else {
+                // catalog - search - item
+                if (event.target.closest('.catalog-search-item')) {
+                    ////console.log('клик по элементу списка')
+                    setSearchOpen(false);
+                } else {
+                    ////console.log('клик не по элементу списка')
+                    setSearchOpen(true);
+                    inputRef.current.focus()
+                }
+                ////console.log('клик 2')
+            }
+            ////console.log('клик есть')
+        };
+
+        window.addEventListener('click', handleClick);
+
+        return () => {
+            window.removeEventListener('click', handleClick);
+        };
+    }, []);
 
     return (
         typeof document !== 'undefined' && <StrictMode>
@@ -44,10 +88,10 @@ export default function RotaryCrusher() {
                     <p>
                         Мы предлагаем эффективное решение для измельчения материалов! В нашем ассортименте появились
                         современные и надежные роторные дробилки, способные справиться с широким спектром задач таких
-                        как дробление:
+                        как <span className='catalog_main_text1-span'>дробление:</span>
                     </p>
                     <br/>
-                    <ul>
+                    <ul className='catalog_main_text1-list'>
                         <li>полимерного и резинового сырья.</li>
                         <li>легкого строительного мусора.</li>
                         <li>пластика, древесины, стекла для вторичного использования.</li>
@@ -66,8 +110,8 @@ export default function RotaryCrusher() {
             </section>
             <section className='catalog-sec2'>
                 <div className='base_grid'>
-                    <div className='adli catalogp_item_left catalog_input-wrapper'>
-                        <div className='catalog_input-area'>
+                    <div className='catalogp_item_left catalog_input-wrapper' ref={rootRef}>
+                        <div className='adli catalog_input-area'>
                             <svg width="27" height="26" viewBox="0 0 27 26" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -78,26 +122,47 @@ export default function RotaryCrusher() {
                                    maxLength="55"
                                    value={searchQuery}
                                    onChange={handleSearchChange}
-                                   onFocus={() => setSearchOpen(true)}
-                                   onBlur={() => setSearchOpen(false)}
+                                   ref={inputRef}
+                                // onFocus={() => setSearchOpen(true)}
+                                // onBlur={() => setSearchOpen(false)}
                             />
                         </div>
                         <ul className='catalog-search-items'
-                            style={searchOpen ? {display: 'block'} : {display: 'none'}}>
+                            style={searchOpen && search.length !== 0 ? {display: 'block'} : {display: 'none'}}>
                             {search.map((item, index) => (
                                 <>
                                     <li className='catalog-search-item' key={index}
-                                        onClick={() => {
-                                            setModal1Open(true);
-                                            document.body.style.overflow = "hidden";
-                                        }}
                                         onMouseEnter={() => {
-                                            console.log('навели на первого');
+                                            ////console.log('навели на первого');
                                             setModalItem(1)
-                                        }}>{item}</li>
+                                        }}
+                                        onClick={() => {
+                                            ////console.log('лкик по ', item, ', index - ', index)
+                                            // if (refsArray[index + 1].current) {
+                                            //     refsArray[index + 1].current.scrollIntoView()
+                                            // }
+                                            //Navigate(`/catalog/rotary-crusher/#${item}`)
+                                            const element = document.getElementById(item);
+                                            if (element) {
+                                                element.scrollIntoView();
+                                                element.classList.add('highlight'); // Добавляем класс подсветки
+
+                                                setTimeout(() => {
+                                                    element.classList.remove('highlight'); // Удаляем класс подсветки через 2 секунды
+                                                }, 20000); // 2000 миллисекунд = 2 секунды
+                                                ////console.log("элемент есть - ", item)
+                                            } else {
+                                                ////console.log("элемента нет - ", item)
+                                            }
+                                            // setSearchOpen(false);
+                                        }}>
+
+                                        {item}
+                                    </li>
                                     <br/></>
                             ))}
                         </ul>
+
                     </div>
                 </div>
                 <div className='catalog-items-sec'>
@@ -109,11 +174,13 @@ export default function RotaryCrusher() {
                                 document.body.style.overflow = "hidden";
                             }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(1)
-                            }}>
+                            }}
+                            ref={refsArray[1]}
+                            id='P-180L-380'>
                             <h3 className='head1'>
-                                Р-180L-380
+                                P-180L-380
                             </h3>
                             <div style={{marginTop: '3.17708333333vw'}}>
                                 <img src='/catalog/crusher/P-180L-380.png'/>
@@ -124,11 +191,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(2)
-                            }}>
+                            }}
+                            ref={refsArray[2]}
+                            id='P-180L-220'>
                             <h3 className='head1'>
-                                Р-180L-220
+                                P-180L-220
                             </h3>
                             <div style={{marginTop: '3.17708333333vw'}}>
                                 <img src='/catalog/crusher/P-180L-220.png'/>
@@ -144,11 +213,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(3)
-                            }}>
+                            }}
+                            ref={refsArray[3]}
+                            id='P-250P'>
                             <h3 className='head1'>
-                                Р-250Р
+                                P-250Р
                             </h3>
                             <div style={{marginTop: '2.13541666667vw'}}>
                                 <img src='/catalog/crusher/P-250P.png'/>
@@ -159,11 +230,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(4)
-                            }}>
+                            }}
+                            ref={refsArray[4]}
+                            id='P-250C'>
                             <h3 className='head1'>
-                                Р-250C
+                                P-250C
                             </h3>
                             <div style={{marginTop: '2.13541666667vw'}}>
                                 <img src='/catalog/crusher/P-250C.png'/>
@@ -179,11 +252,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(5)
-                            }}>
+                            }}
+                            ref={refsArray[5]}
+                            id='P-300L'>
                             <h3 className='head1'>
-                                Р-300L
+                                P-300L
                             </h3>
                             <div style={{marginTop: '2.23958333333vw'}}>
                                 <img src='/catalog/crusher/P-300L.png'/>
@@ -194,11 +269,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(6)
-                            }}>
+                            }}
+                            ref={refsArray[6]}
+                            id='P-300P'>
                             <h3 className='head1'>
-                                Р-300P
+                                P-300P
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-300P.png'/>
@@ -209,11 +286,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(7)
-                            }}>
+                            }}
+                            id='P-300C'>
                             <h3 className='head1'>
-                                Р-300C
+                                P-300C
                             </h3>
                             <div style={{marginTop: '2.44791666667vw'}}>
                                 <img src='/catalog/crusher/P-300C.png'/>
@@ -229,11 +307,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(8)
-                            }}>
+                            }}
+                            ref={refsArray[8]}
+                            id='P-400L'>
                             <h3 className='head1'>
-                                Р-400L
+                                P-400L
                             </h3>
                             <div style={{marginTop: '2.44791666667vw'}}>
                                 <img src='/catalog/crusher/P-400L.png'/>
@@ -244,11 +324,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(9)
-                            }}>
+                            }}
+                            ref={refsArray[9]}
+                            id='P-400P'>
                             <h3 className='head1'>
-                                Р-400P
+                                P-400P
                             </h3>
                             <div style={{marginTop: '1.92708333333vw'}}>
                                 <img src='/catalog/crusher/P-400P.png'/>
@@ -259,11 +341,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(10)
-                            }}>
+                            }}
+                            ref={refsArray[10]}
+                            id='P-400C'>
                             <h3 className='head1'>
-                                Р-400C
+                                P-400C
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
                                 <img src='/catalog/crusher/P-400C.png'/>
@@ -279,11 +363,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(11)
-                            }}>
+                            }}
+                            ref={refsArray[11]}
+                            id='P-500L'>
                             <h3 className='head1'>
-                                Р-500L
+                                P-500L
                             </h3>
                             <div style={{marginTop: '2.76041666667vw'}}>
                                 <img src='/catalog/crusher/P-500L.png'/>
@@ -294,11 +380,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(12)
-                            }}>
+                            }}
+                            ref={refsArray[12]}
+                            id='P-500P'>
                             <h3 className='head1'>
-                                Р-500P
+                                P-500P
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
                                 <img src='/catalog/crusher/P-500P.png'/>
@@ -309,11 +397,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(13)
-                            }}>
+                            }}
+                            ref={refsArray[13]}
+                            id='P-500C'>
                             <h3 className='head1'>
-                                Р-500C
+                                P-500C
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
                                 <img src='/catalog/crusher/P-500C.png'/>
@@ -329,11 +419,13 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(14)
-                            }}>
+                            }}
+                            ref={refsArray[14]}
+                            id='P-600L'>
                             <h3 className='head1'>
-                                Р-600L
+                                P-600L
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
                                 <img src='/catalog/crusher/P-600L.png'/>
@@ -344,11 +436,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(15)
-                            }}>
+                            }}
+                            id='P-600P'>
                             <h3 className='head1'>
-                                Р-600P
+                                P-600P
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
                                 <img src='/catalog/crusher/P-600P.png'/>
@@ -359,11 +452,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(16)
-                            }}>
+                            }}
+                            id='P-600C'>
                             <h3 className='head1'>
-                                Р-600C
+                                P-600C
                             </h3>
                             <div style={{marginTop: '2.39583333333vw'}}>
                                 <img src='/catalog/crusher/P-600C.png'/>
@@ -379,11 +473,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(17)
-                            }}>
+                            }}
+                            id='P-700L'>
                             <h3 className='head1'>
-                                Р-700L
+                                P-700L
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-700L.png'/>
@@ -394,11 +489,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(18)
-                            }}>
+                            }}
+                            id='P-700P'>
                             <h3 className='head1'>
-                                Р-700P
+                                P-700P
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-700P.png'/>
@@ -409,11 +505,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(19)
-                            }}>
+                            }}
+                            id='P-700C'>
                             <h3 className='head1'>
-                                Р-700C
+                                P-700C
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-700C.png'/>
@@ -429,11 +526,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(20)
-                            }}>
+                            }}
+                            id='P-800L'>
                             <h3 className='head1'>
-                                Р-800L
+                                P-800L
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-800L.png'/>
@@ -444,11 +542,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(21)
-                            }}>
+                            }}
+                            id='P-800P'>
                             <h3 className='head1'>
-                                Р-800P
+                                P-800P
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-800P.png'/>
@@ -459,11 +558,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(22)
-                            }}>
+                            }}
+                            id='P-800C'>
                             <h3 className='head1'>
-                                Р-800C
+                                P-800C
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-800C.png'/>
@@ -479,11 +579,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(23)
-                            }}>
+                            }}
+                            id='P-1000L'>
                             <h3 className='head1'>
-                                Р-1000L
+                                P-1000L
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-1000L.png'/>
@@ -494,11 +595,12 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                             onMouseEnter={() => {
-                                console.log('навели на первого');
+                                ////console.log('навели на первого');
                                 setModalItem(24)
-                            }}>
+                            }}
+                            id='P-1000P'>
                             <h3 className='head1'>
-                                Р-1000P
+                                P-1000P
                             </h3>
                             <div style={{marginTop: '2.34375vw'}}>
                                 <img src='/catalog/crusher/P-1000P.png'/>
@@ -517,7 +619,7 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                         onMouseEnter={() => {
-                            console.log('навели на первую фотку');
+                            ////console.log('навели на первую фотку');
                             setModal2Item(1)
                         }}>
                         <img src='/catalog/crusher/gal1.png' alt='photo'/>
@@ -529,7 +631,7 @@ export default function RotaryCrusher() {
                             document.body.style.overflow = "hidden";
                         }}
                         onMouseEnter={() => {
-                            console.log('навели на первую фотку');
+                            ////console.log('навели на первую фотку');
                             setModal2Item(2)
                         }}>
                         <img src='/catalog/crusher/gal2.png'/></li>
@@ -539,7 +641,7 @@ export default function RotaryCrusher() {
                         document.body.style.overflow = "hidden";
                     }}
                         onMouseEnter={() => {
-                            console.log('навели на первую фотку');
+                            ////console.log('навели на первую фотку');
                             setModal2Item(3)
                         }}>
                         <img src='/catalog/crusher/gal3.png'/></li>
@@ -549,7 +651,7 @@ export default function RotaryCrusher() {
                         document.body.style.overflow = "hidden";
                     }}
                         onMouseEnter={() => {
-                            console.log('навели на первую фотку');
+                            ////console.log('навели на первую фотку');
                             setModal2Item(4)
                         }}>
                         <img src='/catalog/crusher/gal4.png'/></li>

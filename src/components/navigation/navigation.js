@@ -40,7 +40,7 @@ export default function Navigation({enLan}) {
             <Link to={`/manufacturing`} id={styles.nav4}>Производство</Link>
 
             <div className={`${styles.navblock}  ${styles.navBlock2}`}>
-                <Link to={`/catalog`} id={styles.nav5} className={styles.navLink}>Каталог</Link>
+                <Link to={`/catalog`} id={styles.nav5} className={styles.navLink}>Каталог оборудования</Link>
                 <div className={styles.navInternalBlock1Wrapper}>
                     <ul className={styles.navInternalBlock} id={styles.navInternalBlock1}>
                         <li>
