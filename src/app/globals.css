@@ -36,6 +36,8 @@ body {
     --color-gradient-end: #86a2ff6c;
     position: relative;
     background-color: #3E456C;
+    /*--first_block: calc(calc(100vh - 7.20833vw) / 92.79167);*/
+    --first_block: max(calc(calc(100vh - 7.20833vw) / 53.7), 0.75vw);
 }
 
 #start {
@@ -367,6 +369,11 @@ p, h1, h2, h3, h4, h5, a, img {
     .brt6 {
         display: none;
     }
+
+    body {
+        /*--first_block: max(calc(calc(100vh - 7.20833vw) / 53.7), 0.75vw);*/
+        --first_block: calc(calc(100vh - 9.16146vw) / 80);
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -384,6 +391,10 @@ p, h1, h2, h3, h4, h5, a, img {
 
     .brt6 {
         display: inline;
+    }
+
+    body {
+        --first_block: calc(calc(100vh - 17.55556vw) / 80);
     }
 }
 
