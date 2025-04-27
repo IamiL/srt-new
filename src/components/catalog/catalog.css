@@ -815,4 +815,8 @@ catalog-modal-wrapper-gallery-open {
         padding-top: 3.333333333vw;
         padding-left: 3.055555556vw;
     }
+
+    .catalog_main_img1, .catalog_main_img1::before {
+        border-radius: 8.333333333vw;
+    }
 }
