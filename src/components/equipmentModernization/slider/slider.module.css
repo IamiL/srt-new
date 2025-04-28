@@ -54,20 +54,20 @@
 
 @media only screen and (max-width: 1366px) {
     #div {
-        width: 37.7864583333vw;
-        height: 44.0104166667vw;
-        margin-top: 0.67708333333vw;
-        margin-left: 0;
+        width: 25vw;
+        height: 29.036458333vw;
+        margin-top: unset;
+        margin-left: 3.645833333vw;
     }
 
     #imgs {
-        width: 32.9427083333vw;
+        width: 21.7vw;
         border-radius: 3.90625vw;
     }
 
     #btn_right > svg, #btn_left > svg {
-        width: 4.84375vw;
-        height: 4.84375vw;
+        width: 3.125vw;
+        height: 2.864583333vw;
     }
 
 }

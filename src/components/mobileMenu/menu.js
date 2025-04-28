@@ -106,10 +106,12 @@ function Navigation({enLan, setMenu, menu}) {
             </div>
             <br/>
 
-            <Link className={`${styles.a}`} to={`/cases`} id={styles.nav2}>Наши работы</Link>
+            <Link className={`${styles.a}`} to={`/cases`} onClick={() => setMenu(false)} id={styles.nav2}>Наши
+                работы</Link>
             <br/>
 
-            <Link className={`${styles.a}`} to={`/manufacturing`} id={styles.nav4}>Производство</Link>
+            <Link className={`${styles.a}`} to={`/manufacturing`} onClick={() => setMenu(false)}
+                  id={styles.nav4}>Производство</Link>
             <br/>
 
             <button className={`${styles.a} ${styles.navLinkBtn}`} onClick={() => setBlock2Open(!block2Open)}>
@@ -213,7 +215,7 @@ function Navigation({enLan, setMenu, menu}) {
             </div>
             <br/>
 
-            <a href={`#contacts`} className={styles.a} onClick={() => setMenu(false)}>Контакты</a>
+            <Link to={`/#contacts`} className={styles.a} onClick={() => setMenu(false)}>Контакты</Link>
         </nav>
     }
 }
