@@ -108,12 +108,61 @@ export default function DryingCabinets() {
             <section>
                 <h2 className='head1 catalog_gal_heading'>Галерея</h2>
                 <ul className='base_grid'>
-                    <li className='catalog_gal_item1'><img src='/catalog/drying/gal1.png'/></li>
-                    <li className='catalog_gal_item2'><img src='/catalog/drying/gal2.png'/></li>
-                    <li className='catalog_gal_item3'><img src='/catalog/drying/gal3.png'/></li>
-                    <li className='catalog_gal_item4'><img src='/catalog/drying/gal4.png'/></li>
-                    <li className='catalog_gal_item5'><img src='/catalog/drying/gal5.png'/></li>
-                    <li className='catalog_gal_item6'><img src='/catalog/drying/gal6.png'/></li>
+                    <li className='catalog_gal_item1'
+                        onClick={() => {
+                            // setModalItem(1);
+                            setModal2Open(true);
+                            document.body.style.overflow = "hidden";
+                        }}
+                        onMouseEnter={() => {
+                            ////console.log('навели на первую фотку');
+                            setModal2Item(1)
+                        }}>><img src='/catalog/drying/gal1.png'/></li>
+                    <li className='catalog_gal_item2' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            ////console.log('навели на первую фотку');
+                            setModal2Item(2)
+                        }}>><img src='/catalog/drying/gal2.png'/></li>
+                    <li className='catalog_gal_item3' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            ////console.log('навели на первую фотку');
+                            setModal2Item(3)
+                        }}>><img src='/catalog/drying/gal3.png'/></li>
+                    <li className='catalog_gal_item4' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            ////console.log('навели на первую фотку');
+                            setModal2Item(4)
+                        }}>><img src='/catalog/drying/gal4.png'/></li>
+                    <li className='catalog_gal_item5' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            ////console.log('навели на первую фотку');
+                            setModal2Item(5)
+                        }}>><img src='/catalog/drying/gal5.png'/></li>
+                    <li className='catalog_gal_item6' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            ////console.log('навели на первую фотку');
+                            setModal2Item(6)
+                        }}>><img src='/catalog/drying/gal6.png'/></li>
                 </ul>
             </section>
             <GalleryPortal catalogNumber={1} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>

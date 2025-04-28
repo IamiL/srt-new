@@ -2,7 +2,9 @@ import {useRef} from "react";
 import {createPortal} from "react-dom";
 
 const images = [
-    ['', '/catalog/crusher/gal1.png', '/catalog/crusher/gal2.png', '/catalog/crusher/gal3.png', '/catalog/crusher/gal4.png']
+    ['', '/catalog/crusher/gal1.png', '/catalog/crusher/gal2.png', '/catalog/crusher/gal3.png', '/catalog/crusher/gal4.png'],
+    ['', '/catalog/drying/gal1.png', '/catalog/drying/gal2.png', '/catalog/drying/gal3.png', '/catalog/drying/gal4.png', '/catalog/drying/gal5.png', '/catalog/drying/gal6.png'],
+    ['', '/catalog/isolators/isolator.png']
 ]
 
 export default function GalleryPortal({catalogNumber, item, isOpen, setIsOpen}) {
