@@ -64,4 +64,14 @@
     #modernization > p {
         margin-top: 3vw;
     }
+
+    .modernization_sec1 {
+        height: 174.166666667vw;
+    }
+
+    .modernization_heading {
+        font-size: 2.777777778vw;
+        margin-top: 4.444444444vw;
+        margin-bottom: unset;
+    }
 }

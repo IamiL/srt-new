@@ -45,8 +45,8 @@
 
 @media only screen and (max-width: 767px) {
     #div > div {
-        grid-column-start: 1;
-        grid-column-end: 7;
+        margin-top: unset;
+        padding-top: unset;
     }
 
     #div > p {
@@ -57,21 +57,23 @@
     #div {
         margin-top: 4vw;
         height: auto;
-        grid-template-rows: 76.6666666667vw 165vw;
-        row-gap: 4.72222222222vw
+        grid-template-rows: unset;
+        row-gap: unset;
     }
 
     #div > div > h4 {
-        margin-top: 7.22222222222vw;
+        margin-top: unset;
     }
 
     #div > div > ul {
-        margin-top: 6.38888888889vw;
-        padding-left: 5.16666666667vw;
-        padding-right: 5.16666666667vw;
+        margin-top: 3vw;
+        padding-left: 12.5vw;
+        padding-right: 12.5vw;
     }
 
     #div > p {
         font-size: 3.88888888889vw;
+        padding-left: 5.989583333vw;
+        padding-right: 5.598958333vw;
     }
 }

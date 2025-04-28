@@ -29,9 +29,22 @@
 @media only screen and (max-width: 767px) {
     #automation {
         margin-top: 10vw;
+        padding-top: 6.666666667vw;
     }
 
     #automation > h2 {
         line-height: 1.1;
+        font-size: 5.555555556vw !important;
+    }
+
+    .automation_sec1 {
+        grid-column: 1/-1 !important;
+    }
+
+    .automation_sec1 > h4 {
+        margin: 0 15.277777778vw;
+    }
+
+    .automation_sec1 > ul {
     }
 }

@@ -74,18 +74,19 @@
 
 @media only screen and (max-width: 767px) {
     #div {
-        width: 88.9027777778vw;
-        height: 103.611111111vw;
-        margin-top: 11.3888888889vw;
+        width: 63vw;
+        height: 73.888888889vw;
+        margin-top: 3.333333333vw;
+        justify-self: center;
     }
 
     #imgs {
-        width: 77.5vw;
-        border-radius: 8.33333333333vw;
+        width: 55vw;
+        border-radius: 4.166666667vw;
     }
 
     #btn_right > svg, #btn_left > svg {
-        width: 11.4027777778vw;
-        height: 11.4027777778vw;
+        width: 6.944444444vw;
+        height: 6.944444444vw;
     }
 }

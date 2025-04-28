@@ -18,12 +18,10 @@ export default function EquipmentModernization({enLan}) {
                 <p className="text4">
                     {enLan ? 'The customer faced frequent breakdowns of bulky and unreliable Bulgarian-made DC motors on the horizontal boring machine 2А622Ф4.' :
                         <>
-                            Заказчик столкнулся с проблемой частого<br className="brt4"/> выхода из строя<br
-                            className="brt1"/> громоздких и не
-                            очень<br className="brt4"/> надежных двигателей
-                            постоянного тока Болгарского производства<br className="brt1"/> на
-                            горизонтально-расточном<br
-                            className="brt5"/> станке
+                            Заказчик столкнулся с проблемой частого выхода из строя громоздких и не
+                            очень надежных двигателей
+                            постоянного тока Болгарского производства на
+                            горизонтально-расточном станке
                             2А622Ф4.</>}
                     <br/>
                     <br/>
@@ -37,7 +35,7 @@ export default function EquipmentModernization({enLan}) {
                                 className="brt5"/> станок
                             был
                             успешно сдан заказчику,
-                            который планирует по этой же<br className="brt4"/> схеме<br className="brt1"/> поменять все
+                            который планирует по этой же схеме<br className="brt1"/> поменять все
                             остальные двигатели!
                         </>
                     }
