@@ -2,7 +2,7 @@ import {useRef} from "react";
 import {createPortal} from "react-dom";
 
 const images = [
-    ['', '/catalog/crusher/gal1.png', '/catalog/crusher/gal2.png', '/catalog/crusher/gal3.png', '/catalog/crusher/gal4.png'],
+    ['', '/catalog/crusher/gal1.png', '/catalog/crusher/gal2.png', '/catalog/crusher/gal3.png', '/catalog/crusher/gal4.png', '/video.mp4'],
     ['', '/catalog/drying/gal1.png', '/catalog/drying/gal2.png', '/catalog/drying/gal3.png', '/catalog/drying/gal4.png', '/catalog/drying/gal5.png', '/catalog/drying/gal6.png'],
     ['', '/catalog/isolators/isolator.png']
 ]
@@ -37,7 +37,14 @@ export default function GalleryPortal({catalogNumber, item, isOpen, setIsOpen}) 
                     </svg>
                 </button>
                 <div className='fullscreen-img'>
-                    <img className='fullscreen-img-image' src={images[catalogNumber][item]} alt=''/>
+                    {
+                        (catalogNumber === 0 && item === 5) ?
+                            <video loop height="100%" className="fullscreen-img-image">
+                                <source src={"/video.mp4"}
+                                        type='video/quicktime'/>
+                            </video> :
+                            <img className='fullscreen-img-image' src={images[catalogNumber][item]} alt=''/>
+                    }
                 </div>
             </div>}
             {/*</div>*/}

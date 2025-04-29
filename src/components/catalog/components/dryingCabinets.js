@@ -22,8 +22,7 @@ export default function DryingCabinets() {
                     <p>
                         Шкафы изготовлены из высококачественных материалов и нержавеющей стали, что гарантирует
                         надежность
-                        и многолетнюю эксплуатацию.
-
+                        и многолетнюю эксплуатацию.<br/><br/>
                         Основная задача — удаление влаги из различных материалов, будь то сырье, полуфабрикаты или
                         готовая продукция. Также их использование может быть необходимо перед покраской, нанесением
                         покрытий, склейкой материалов или другими технологическими операциями. Наша продукция
@@ -31,13 +30,14 @@ export default function DryingCabinets() {
                         в течение неограниченного времени, и вы можете быть спокойны: вы избежите коррозии, гниения,
                         плесени
                         и других негативных последствий, связанных
-                        с влажностью.
-
+                        с влажностью.<br/><br/>
                         Наши специалисты помогут подобрать сушильный шкаф, который идеально соответствует нуждам вашего
-                        производства, а в случае необходимости — доработать его по вашему техническому заданию.
-
+                        производства, а в случае необходимости — доработать его по вашему техническому
+                        заданию.<br/><br/>
+                        <span className='DryingCabinets-text-span'>
                         Мы можем оснастить шкаф программируемым логическим контроллером (ПЛК) с сенсорным управлением и
                         возможностью удаленного контроля
+                        </span>
                     </p>
                 </div>
             </section>
@@ -108,7 +108,7 @@ export default function DryingCabinets() {
             <section>
                 <h2 className='head1 catalog_gal_heading'>Галерея</h2>
                 <ul className='base_grid'>
-                    <li className='catalog_gal_item1'
+                    <li className='gallery-item catalog_gal_item1'
                         onClick={() => {
                             // setModalItem(1);
                             setModal2Open(true);
@@ -117,8 +117,8 @@ export default function DryingCabinets() {
                         onMouseEnter={() => {
                             ////console.log('навели на первую фотку');
                             setModal2Item(1)
-                        }}>><img src='/catalog/drying/gal1.png'/></li>
-                    <li className='catalog_gal_item2' onClick={() => {
+                        }}><img src='/catalog/drying/gal1.png'/></li>
+                    <li className='gallery-item catalog_gal_item2' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -126,8 +126,8 @@ export default function DryingCabinets() {
                         onMouseEnter={() => {
                             ////console.log('навели на первую фотку');
                             setModal2Item(2)
-                        }}>><img src='/catalog/drying/gal2.png'/></li>
-                    <li className='catalog_gal_item3' onClick={() => {
+                        }}><img src='/catalog/drying/gal2.png'/></li>
+                    <li className='gallery-item catalog_gal_item3' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -135,8 +135,8 @@ export default function DryingCabinets() {
                         onMouseEnter={() => {
                             ////console.log('навели на первую фотку');
                             setModal2Item(3)
-                        }}>><img src='/catalog/drying/gal3.png'/></li>
-                    <li className='catalog_gal_item4' onClick={() => {
+                        }}><img src='/catalog/drying/gal3.png'/></li>
+                    <li className='gallery-item catalog_gal_item4' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -144,8 +144,8 @@ export default function DryingCabinets() {
                         onMouseEnter={() => {
                             ////console.log('навели на первую фотку');
                             setModal2Item(4)
-                        }}>><img src='/catalog/drying/gal4.png'/></li>
-                    <li className='catalog_gal_item5' onClick={() => {
+                        }}><img src='/catalog/drying/gal4.png'/></li>
+                    <li className='gallery-item catalog_gal_item5' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -153,8 +153,8 @@ export default function DryingCabinets() {
                         onMouseEnter={() => {
                             ////console.log('навели на первую фотку');
                             setModal2Item(5)
-                        }}>><img src='/catalog/drying/gal5.png'/></li>
-                    <li className='catalog_gal_item6' onClick={() => {
+                        }}><img src='/catalog/drying/gal5.png'/></li>
+                    <li className='gallery-item catalog_gal_item6' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -162,11 +162,11 @@ export default function DryingCabinets() {
                         onMouseEnter={() => {
                             ////console.log('навели на первую фотку');
                             setModal2Item(6)
-                        }}>><img src='/catalog/drying/gal6.png'/></li>
+                        }}><img src='/catalog/drying/gal6.png'/></li>
                 </ul>
             </section>
             <GalleryPortal catalogNumber={1} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>
-            <Portal item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
+            <Portal heightType={2} item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
         </>
     );
 }

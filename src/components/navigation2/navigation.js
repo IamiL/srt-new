@@ -1,4 +1,5 @@
 import styles from "./navigation.module.css";
+import {Link} from "react-router-dom";
 
 export default function Navigation({enLan}) {
     if (enLan === true) {
@@ -11,11 +12,11 @@ export default function Navigation({enLan}) {
         </nav>
     } else {
         return <nav id={styles.nav}>
-            <a href={`#advantages`} id={styles.nav1}>Преимущества</a>
-            <a href={`#capabilities`} id={styles.nav2}>Возможности</a>
-            <a href={`#industrial_robots`} id={styles.nav3}>Промышленные роботы</a>
-            <a href={`#manufacturing`} id={styles.nav4}>Производство</a>
-            <a href={`#contacts`} id={styles.nav5}>Контакты</a>
+            <Link to={`/`} id={styles.nav1}>О нас</Link>
+            <Link to={`/cases`} id={styles.nav2}>Наши работы</Link>
+            <Link to={`/manufacturing`} id={styles.nav3}>Производство</Link>
+            <Link to={`/catalog`} id={styles.nav4}>Каталог оборудования</Link>
+            <Link to={`/#contacts`} id={styles.nav5}>Контакты</Link>
         </nav>
     }
 }

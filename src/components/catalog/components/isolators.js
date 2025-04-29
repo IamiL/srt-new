@@ -26,8 +26,7 @@ export default function Isolators() {
                         в промышленных нагревателях со стальным корпусом,
                         а в керамических нагревателях (керамические ленточные
                         ТЭНы, инфракрасные керамические и кварцевые излучатели, плоские керамические ТЭНы) керамические
-                        бусы являются элементом стандартного типа подключения нагревателей.
-
+                        бусы являются элементом стандартного типа подключения нагревателей.<br/><br/>
                         Изоляция проводов керамическими бусинами – это надежный способ дополнительной защиты
                         термостойких проводов при работе в условиях повышенных температур. Бусины надежно защищают
                         провода от изломов
@@ -55,7 +54,7 @@ export default function Isolators() {
                 </ul>
             </section>
             <GalleryPortal catalogNumber={1} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>
-            <Portal item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
+            <Portal heightType={3} item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
         </>
     );
 }

@@ -655,6 +655,16 @@ export default function RotaryCrusher() {
                             setModal2Item(4)
                         }}>
                         <img src='/catalog/crusher/gal4.png'/></li>
+                    <li className='catalog_gal_item5 gallery-item' onClick={() => {
+                        // setModalItem(1);
+                        setModal2Open(true);
+                        document.body.style.overflow = "hidden";
+                    }}
+                        onMouseEnter={() => {
+                            ////console.log('навели на первую фотку');
+                            setModal2Item(5)
+                        }}>
+                        <img src='/catalog/crusher/gal4.png'/></li>
                 </ul>
             </section>
             <GalleryPortal catalogNumber={0} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>

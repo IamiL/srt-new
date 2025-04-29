@@ -2,7 +2,7 @@ import {createPortal} from "react-dom";
 import Modal from "@/components/catalog/components/modal";
 import {useRef} from "react";
 
-export default function Portal({item, isOpen, setIsOpen}) {
+export default function Portal({heightType, item, isOpen, setIsOpen}) {
     // const [mounted, setMounted] = useState(false)
     //
     // useEffect(() => {
@@ -46,9 +46,11 @@ export default function Portal({item, isOpen, setIsOpen}) {
                     document.body.style.overflow = "visible";
                 }
             }}>
-            <div className={`catalog-modal-container`}
-                 ref={ref}>
-                <div className={`catalog-modal ${isOpen ? 'catalog-modal-open' : 'catalog-modal-close'}`}>
+            <div
+                className={`catalog-modal-container ${heightType === 2 ? 'modal-dryingCabinets-height' : heightType === 3 ? 'modal-isolators-height' : ''}`}
+                ref={ref}>
+                <div
+                    className={`catalog-modal ${isOpen ? 'catalog-modal-open' : 'catalog-modal-close'} ${heightType === 2 ? 'modal-dryingCabinets-height' : heightType === 3 ? 'modal-isolators-height' : ''}`}>
                     <button className='catalog-modal-close-button' onClick={() => {
                         setIsOpen(false);
                         document.body.style.overflow = "visible";

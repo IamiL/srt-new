@@ -42,8 +42,6 @@ export default function Contacts({enLan}) {
                 <h3>
                     {enLan ? 'Contacts' : 'Контакты'}
                 </h3>
-
-
                 <br/>
                 <br/>
                 <a href="mailto:logistica@povpro.ru">
@@ -51,6 +49,12 @@ export default function Contacts({enLan}) {
                 </a>
                 <a href="tel:+79276573030">
                     +7 (927) 657-30-30
+                </a>
+                <a href='https://t.me/+79276573030'>
+                    telegram
+                </a>
+                <a href='https://api.whatsapp.com/send/?phone=79276573030'>
+                    whatsApp
                 </a>
             </div>
         </div>

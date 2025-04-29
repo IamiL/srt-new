@@ -44,9 +44,9 @@ export default function Csr() {
                     <Route exact path="/catalog/drying-cabinets" element={<DryingCabinetsPage/>}/>
                 </Routes>
             </main>
+            <Footer/>
             {/*<RouterProvider router={router} />*/}
         </BrowserRouter>
-            <Footer/>
         </>
     );
 }
