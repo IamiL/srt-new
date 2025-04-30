@@ -326,7 +326,7 @@ export default function Modal({item, enLan}) {
                 </div>
                 <div className='catalog-modal-content-table-wrapper'>
                     <h3 className='head1 catalog-modal-sec21-heading'>{enLan ? 'Main technical characteristics' : 'Основные технические характеристики'}    </h3>
-                    <img src={items[item].table} className='catalog-modal-wrapper-table'/>
+                    <img src={enLan ? enItems[item].table : items[item].table} className='catalog-modal-wrapper-table'/>
                 </div>
             </section>
         </>
