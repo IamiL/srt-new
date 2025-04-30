@@ -251,6 +251,7 @@
     grid-column-start: 8;
     grid-column-end: 13;
     text-align: unset;
+    font-size: 1.25vw;
 }
 
 .catalog_search_input {

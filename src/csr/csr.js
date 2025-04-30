@@ -33,17 +33,15 @@ export default function Csr() {
     return (
         typeof document !== 'undefined' && <><BrowserRouter>
             <Header enLan={false}/>
-            <main>
-                <Routes>
-                    <Route exact path="/" element={<HomeNoSSR/>}/>
-                    <Route exact path="/cases" element={<Cases/>}/>
-                    <Route exact path="/manufacturing" element={<Manufacturing/>}/>
-                    <Route exact path="/catalog" element={<CatalogNoSSR/>}/>
-                    <Route exact path="/catalog/rotary-crusher" element={<RotaryCrusher/>}/>
-                    <Route exact path="/catalog/isolators" element={<Isolators/>}/>
-                    <Route exact path="/catalog/drying-cabinets" element={<DryingCabinetsPage/>}/>
-                </Routes>
-            </main>
+            <Routes>
+                <Route exact path="/" element={<HomeNoSSR/>}/>
+                <Route exact path="/cases" element={<Cases/>}/>
+                <Route exact path="/manufacturing" element={<Manufacturing/>}/>
+                <Route exact path="/catalog" element={<CatalogNoSSR/>}/>
+                <Route exact path="/catalog/rotary-crusher" element={<RotaryCrusher/>}/>
+                <Route exact path="/catalog/isolators" element={<Isolators/>}/>
+                <Route exact path="/catalog/drying-cabinets" element={<DryingCabinetsPage/>}/>
+            </Routes>
             <Footer/>
             {/*<RouterProvider router={router} />*/}
         </BrowserRouter>

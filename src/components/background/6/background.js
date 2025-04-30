@@ -1,6 +1,6 @@
 import styles from "./background.module.css";
 
-export default function Background({enLan}) {
+export default function Background6() {
     return <div id={styles.div}>
         <div>
             <div id={styles.g1}>
