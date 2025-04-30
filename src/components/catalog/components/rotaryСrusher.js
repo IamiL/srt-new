@@ -4,7 +4,7 @@ import Portal from "@/components/catalog/components/portal";
 import GalleryPortal from "@/components/catalog/components/gallery-portal";
 
 
-export default function RotaryCrusher() {
+export default function RotaryCrusher({enLan}) {
     const initialArray = [
         'P-180L-380', 'P-180L-220', 'P-250P', 'P-250C', 'P-300L', 'P-300P', 'P-300C', 'P-400L', 'P-400P',
         'P-400C', 'P-500L', 'P-500P', 'P-500C', 'P-600L', 'P-600P', 'P-600C', 'P-700L', 'P-700P', 'P-700C', 'P-800L', 'P-800P', 'P-800C', 'P-1000L', 'P-1000P'
@@ -81,30 +81,34 @@ export default function RotaryCrusher() {
 
     return (
         typeof document !== 'undefined' && <StrictMode>
-            <h1 className='heading1 catalogp-heading'>Дробилка Роторная</h1>
+            <h1 className='heading1 catalogp-heading'>{enLan ? 'Rotary Crusher' : 'Дробилка Роторная'}</h1>
             <section className='base_grid catalog-main-sec'>
                 <div className='catalog_main_img1 adli'><img src='/catalog/crusher/crusher2.png'/></div>
                 <div className='catalog_main_text1 text4'>
                     <p>
-                        Мы предлагаем эффективное решение для измельчения материалов! В нашем ассортименте появились
-                        современные и надежные роторные дробилки, способные справиться с широким спектром задач таких
-                        как <span className='catalog_main_text1-span'>дробление:</span>
+                        {enLan ? <>
+                                We offer an efficient solution for material shredding! Our range of modern and reliable
+                                impact crushers is now available, capable of handling a wide range of tasks such as <span
+                                className='catalog_main_text1-span'>crushing of:</span>
+                            </> :
+                            <>
+                                Мы предлагаем эффективное решение для измельчения материалов! В нашем ассортименте
+                                появились
+                                современные и надежные роторные дробилки, способные справиться с широким спектром задач
+                                таких
+                                как <span className='catalog_main_text1-span'>дробление:</span>
+                            </>}
                     </p>
                     <br/>
                     <ul className='catalog_main_text1-list'>
-                        <li>полимерного и резинового сырья.</li>
-                        <li>легкого строительного мусора.</li>
-                        <li>пластика, древесины, стекла для вторичного использования.</li>
-                        <li>сельское хозяйство: измельчение кормов, зерна, соломы для нужд животноводства.</li>
+                        <li>{enLan ? 'polymer and rubber raw materials.' : 'полимерного и резинового сырья.'}</li>
+                        <li>{enLan ? 'light construction waste.' : 'легкого строительного мусора.'}</li>
+                        <li>{enLan ? 'plastic, wood, glass for recycling.' : 'пластика, древесины, стекла для вторичного использования.'}</li>
+                        <li>{enLan ? 'agriculture: grinding of fodder, grain, straw for livestock breeding needs.' : 'сельское хозяйство: измельчение кормов, зерна, соломы для нужд животноводства.'}</li>
                     </ul>
                     <br/>
-                    <p>
-                        Мы предлагаем роторные дробилки различных типов
-                        и производительности, чтобы удовлетворить любые ваши потребности, а также обеспечиваем
-                        необходимыми расходными запасными частями. Наши роторные дробилки проверены, протестированы,
-                        зарекомендовали себя
-                        как крайне надежное и безотказное дробильное оборудование, в настоящий момент находится
-                        в эксплуатации в условиях действующего производства!
+                    <p>{enLan ? 'We offer impact crushers of various types and capacities to meet your every need, as well as providing the necessary consumable spare parts. Our impact crushers are tried and tested, proven to be extremely reliable and trouble-free crushing equipment, and are currently in service in an existing production environment!' :
+                        'Мы предлагаем роторные дробилки различных типов и производительности, чтобы удовлетворить любые ваши потребности, а также обеспечиваем необходимыми расходными запасными частями. Наши роторные дробилки проверены, протестированы, зарекомендовали себя как крайне надежное и безотказное дробильное оборудование, в настоящий момент находится в эксплуатации в условиях действующего производства!'}
                     </p>
                 </div>
             </section>
@@ -118,7 +122,8 @@ export default function RotaryCrusher() {
                                     d="M9.98577 18.7434C7.19488 18.7434 4.83312 17.836 2.90048 16.0213C0.967853 14.2065 0.00102499 11.99 8.12843e-07 9.37168C-0.00102337 6.75338 0.965804 4.53686 2.90048 2.72211C4.83516 0.907371 7.19693 0 9.98577 0C12.7746 0 15.1369 0.907371 17.0726 2.72211C19.0083 4.53686 19.9746 6.75338 19.9715 9.37168C19.9715 10.429 19.7923 11.4262 19.4339 12.3634C19.0754 13.3006 18.5889 14.1296 17.9744 14.8505L26.5775 22.9246C26.8592 23.1889 27 23.5253 27 23.9338C27 24.3423 26.8592 24.6788 26.5775 24.9431C26.2959 25.2074 25.9374 25.3396 25.5021 25.3396C25.0669 25.3396 24.7084 25.2074 24.4267 24.9431L15.8236 16.869C15.0555 17.4457 14.1721 17.9023 13.1735 18.2387C12.175 18.5752 11.1124 18.7434 9.98577 18.7434ZM9.98577 15.8598C11.9061 15.8598 13.5387 15.2292 14.8834 13.9681C16.2282 12.707 16.9 11.1749 16.899 9.37168C16.898 7.56847 16.2261 6.03681 14.8834 4.77667C13.5407 3.51654 11.9082 2.88552 9.98577 2.88359C8.06339 2.88167 6.43135 3.5127 5.08967 4.77667C3.748 6.04065 3.07562 7.57232 3.07255 9.37168C3.06947 11.171 3.74185 12.7032 5.08967 13.9681C6.4375 15.2331 8.06953 15.8636 9.98577 15.8598Z"
                                     fill="white" fillOpacity="0.75"/>
                             </svg>
-                            <input className='text4 catalog_input' type="text" placeholder='Название модели'
+                            <input className='text4 catalog_input' type="text"
+                                   placeholder={enLan ? 'Model name' : 'Название модели'}
                                    maxLength="55"
                                    value={searchQuery}
                                    onChange={handleSearchChange}
@@ -610,9 +615,9 @@ export default function RotaryCrusher() {
                 </div>
             </section>
             <section>
-                <h2 className='head1 catalog_gal_heading'>Галерея</h2>
-                <ul className='base_grid'>
-                    <li className='catalog_gal_item1 gallery-item'
+                <h2 className='head1 catalog_gal_heading'>{enLan ? 'Gallery' : 'Галерея'}</h2>
+                <ul className='base_grid catalog_gal_items1'>
+                    <li className='catalog_gal_item1 gallery-item gallery-item-size1'
                         onClick={() => {
                             // setModalItem(1);
                             setModal2Open(true);
@@ -624,7 +629,7 @@ export default function RotaryCrusher() {
                         }}>
                         <img src='/catalog/crusher/gal1.png' alt='photo'/>
                     </li>
-                    <li className='catalog_gal_item2 gallery-item'
+                    <li className='catalog_gal_item2 gallery-item gallery-item-size1'
                         onClick={() => {
                             // setModalItem(1);
                             setModal2Open(true);
@@ -635,7 +640,7 @@ export default function RotaryCrusher() {
                             setModal2Item(2)
                         }}>
                         <img src='/catalog/crusher/gal2.png'/></li>
-                    <li className='catalog_gal_item3 gallery-item' onClick={() => {
+                    <li className='catalog_gal_item3 gallery-item gallery-item-size1' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -645,7 +650,7 @@ export default function RotaryCrusher() {
                             setModal2Item(3)
                         }}>
                         <img src='/catalog/crusher/gal3.png'/></li>
-                    <li className='catalog_gal_item4 gallery-item' onClick={() => {
+                    <li className='catalog_gal_item4 gallery-item gallery-item-size1' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -655,7 +660,7 @@ export default function RotaryCrusher() {
                             setModal2Item(4)
                         }}>
                         <img src='/catalog/crusher/gal4.png'/></li>
-                    <li className='catalog_gal_item5 gallery-item' onClick={() => {
+                    <li className='catalog_gal_item5 gallery-item gallery-item-size1' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -664,11 +669,11 @@ export default function RotaryCrusher() {
                             ////console.log('навели на первую фотку');
                             setModal2Item(5)
                         }}>
-                        <img src='/catalog/crusher/gal4.png'/></li>
+                        <img src='/video-preview.png'/></li>
                 </ul>
             </section>
             <GalleryPortal catalogNumber={0} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>
-            <Portal item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
+            <Portal enLan={enLan} item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
         </StrictMode>
     );
 }

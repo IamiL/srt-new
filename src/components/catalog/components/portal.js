@@ -2,7 +2,7 @@ import {createPortal} from "react-dom";
 import Modal from "@/components/catalog/components/modal";
 import {useRef} from "react";
 
-export default function Portal({heightType, item, isOpen, setIsOpen}) {
+export default function Portal({heightType, item, isOpen, setIsOpen, enLan}) {
     // const [mounted, setMounted] = useState(false)
     //
     // useEffect(() => {
@@ -62,7 +62,7 @@ export default function Portal({heightType, item, isOpen, setIsOpen}) {
                                   strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"></path>
                         </svg>
                     </button>
-                    <Modal item={item}/>
+                    <Modal item={item} enLan={enLan}/>
                 </div>
             </div>
         </div>,

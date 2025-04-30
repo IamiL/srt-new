@@ -15,6 +15,7 @@
     font-weight: 300;
     line-height: 1.21;
     font-style: normal;
+    white-space: nowrap;
 }
 
 .navblock {

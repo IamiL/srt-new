@@ -13,6 +13,20 @@
     width: 61.6666666667vw;
 }
 
+.contactsBlock-contactsList-icon {
+    height: 2vw;
+}
+
+.contactsBlock-contactsList-contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.contactsBlock-contactsList-iconLinks {
+    display: flex;
+    gap: 1vw
+}
+
 @media only screen and (max-width: 1366px) {
     #contacts > h2 {
         font-family: var(--font-ablation2);

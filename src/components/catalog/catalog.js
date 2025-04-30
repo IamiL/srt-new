@@ -2,11 +2,11 @@ import "./catalog.css"
 import {Link} from "react-router-dom";
 import Background4 from "@/components/background/4/background";
 
-export default function Catalog() {
+export default function Catalog({enLan}) {
     return (
         <>
             <main>
-                <h1 className='heading1 catalogp-heading'>Каталог оборудования</h1>
+                <h1 className='heading1 catalogp-heading'>{enLan ? 'Equipment catalog' : 'Каталог оборудования'}</h1>
                 <section className="catalogp-sec">
                     {/*<div className='base_grid'>*/}
                     {/*    <div className='adli catalogp_item_left catalog_input-wrapper'>*/}
@@ -23,7 +23,7 @@ export default function Catalog() {
                         <li className='catalogp_item catalogp_item_left catalogp_item_padding1 adli'>
                             <Link to='/catalog/rotary-crusher'>
                                 <h2 className='catalogp_item1_heading heading2'>
-                                    Дробилка роторная
+                                    {enLan ? 'Rotary crusher' : 'Дробилка роторная'}
                                 </h2>
                                 <div className='catalogp_item1_img'>
                                     <img src={'/catalog/main/crusher.png'}/>
@@ -33,7 +33,7 @@ export default function Catalog() {
                         <li className='catalogp_item catalogp_item_right catalogp_item_padding2 adli'>
                             <Link to='/catalog/drying-cabinets'>
                                 <h2 className='catalogp_item2_heading heading2'>
-                                    Сушильные шкафы
+                                    {enLan ? 'Drying cabinets' : 'Сушильные шкафы'}
                                 </h2>
                                 <div className='catalogp_item2_img'>
                                     <img src={'/catalog/main/cabinet.png'}/>
@@ -43,7 +43,7 @@ export default function Catalog() {
                         <li className='catalogp_item catalogp_item_left catalogp_item_padding1 adli'>
                             <Link to='/catalog/isolators'>
                                 <h2 className='catalogp_item3_heading heading2'>
-                                    Изоляторы
+                                    {enLan ? 'Isolators' : 'Изоляторы'}
                                 </h2>
                                 <div className='catalogp_item3_img'>
                                     <img src={'/catalog/main/isolators.png'}/>

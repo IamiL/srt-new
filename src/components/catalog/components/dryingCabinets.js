@@ -3,7 +3,7 @@ import {useState} from "react";
 import Portal from "@/components/catalog/components/portal";
 import GalleryPortal from "@/components/catalog/components/gallery-portal";
 
-export default function DryingCabinets() {
+export default function DryingCabinets({enLan}) {
     const [modalItem, setModalItem] = useState(1)
 
     const [modal1Open, setModal1Open] = useState(null)
@@ -15,12 +15,27 @@ export default function DryingCabinets() {
 
     return (
         typeof document !== 'undefined' && <>
-            <h1 className='heading1 catalogp-heading'>Сушильные шкафы</h1>
+            <h1 className='heading1 catalogp-heading'>{enLan ? 'Drying cabinets' : 'Сушильные шкафы'}</h1>
             <section className='base_grid catalog-main-sec'>
                 <div className='catalog_main_img2 adli'><img src='/catalog/drying/drying2.png'/></div>
                 <div className='catalog_main_text2 text4'>
-                    <p>
-                        Шкафы изготовлены из высококачественных материалов и нержавеющей стали, что гарантирует
+                    <p>{enLan ? <>The cabinets are made of high quality materials and stainless steel, which guarantees
+                        reliability and many years of use.
+                        and many years of use.<br/><br/>
+                        The main task is to remove moisture from various
+                        materials, be it raw materials, semi-finished or finished products. Also their use may be
+                        necessary before painting, applying
+                        coating, gluing of materials or other technological operations. Our products
+                        allow you to intelligently control the process
+                        for an indefinite period of time, and you can rest assured you'll avoid corrosion, rot, mold.
+                        and other negative effects associated
+                        associated with moisture.<br/><br/>
+                        Our specialists will help you choose the drying cabinet that perfectly matches the needs of your
+                        production.
+                        and, if necessary, customize it to your specifications.
+                        to your specifications.</> : <>Шкафы изготовлены из высококачественных материалов и
+                        нержавеющей стали, что
+                        гарантирует
                         надежность <br className='brt2'/>и многолетнюю эксплуатацию.<br/><br/>
                         Основная задача — удаление влаги из различных <br/>материалов, будь то сырье, полуфабрикаты или
                         готовая продукция. Также их использование может быть <br className='brt2'/>необходимо перед
@@ -31,13 +46,15 @@ export default function DryingCabinets() {
                         влажностью.<br/><br/>
                         Наши специалисты помогут подобрать сушильный шкаф, который идеально соответствует нуждам
                         вашего <br className='brt2'/>производства, а в случае необходимости — доработать его <br
-                        className='brt1'/>по вашему
+                            className='brt1'/>по вашему
                         техническому
-                        заданию.<br/><br/>
-                        <span className='DryingCabinets-text-span'>
+                        заданию.</>}
+                        <br/><br/>
+                        {enLan ? <><span className='DryingCabinets-text-span'>We can equip the cabinet with a programmable logic controller (PLC) with touch screen control and remote monitoring capability</span></> : <><span
+                            className='DryingCabinets-text-span'>
                         Мы можем оснастить шкаф <br/>программируемым логическим <br/>контроллером (ПЛК) с сенсорным <br/>управлением и
                         возможностью удаленного контроля
-                        </span>
+                        </span></>}
                     </p>
                 </div>
             </section>
@@ -52,7 +69,7 @@ export default function DryingCabinets() {
                             setModalItem(25)
                         }}>
                         <h2 className='head1'>
-                            Сушильный шкаф — 360
+                            {enLan ? 'Drying cabinet — 360' : 'Сушильный шкаф — 360'}
                         </h2>
                         <div className='catalog_item2_img'>
                             <img src='/catalog/drying/360.png'/>
@@ -67,7 +84,7 @@ export default function DryingCabinets() {
                             setModalItem(26)
                         }}>
                         <h2 className='head1'>
-                            Сушильный шкаф — 480
+                            {enLan ? 'Drying cabinet — 480' : 'Сушильный шкаф — 480'}
                         </h2>
                         <div className='catalog_item2_img'>
                             <img src='/catalog/drying/480.png'/>
@@ -82,7 +99,7 @@ export default function DryingCabinets() {
                             setModalItem(27)
                         }}>
                         <h2 className='head1'>
-                            Сушильный шкаф — 576
+                            {enLan ? 'Drying cabinet — 576' : 'Сушильный шкаф — 576'}
                         </h2>
                         <div className='catalog_item2_img'>
                             <img src='/catalog/drying/576.png'/>
@@ -97,7 +114,7 @@ export default function DryingCabinets() {
                             setModalItem(28)
                         }}>
                         <h2 className='head1'>
-                            Сушильный шкаф — 960
+                            {enLan ? 'Drying cabinet — 960' : 'Сушильный шкаф — 960'}
                         </h2>
                         <div className='catalog_item2_img'>
                             <img src='/catalog/drying/960.png'/>
@@ -106,7 +123,7 @@ export default function DryingCabinets() {
                 </ul>
             </section>
             <section>
-                <h2 className='head1 catalog_gal_heading'>Галерея</h2>
+                <h2 className='head1 catalog_gal_heading'>{enLan ? 'Gallery' : 'Галерея'}</h2>
                 <ul className='base_grid'>
                     <li className='gallery-item catalog_gal_item1'
                         onClick={() => {
@@ -166,7 +183,8 @@ export default function DryingCabinets() {
                 </ul>
             </section>
             <GalleryPortal catalogNumber={1} item={modal2Item} isOpen={modal2Open} setIsOpen={setModal2Open}/>
-            <Portal heightType={2} item={modalItem} isOpen={modal1Open} setIsOpen={(value) => setModal1Open(value)}/>
+            <Portal enLan={enLan} heightType={2} item={modalItem} isOpen={modal1Open}
+                    setIsOpen={(value) => setModal1Open(value)}/>
         </>
     );
 }

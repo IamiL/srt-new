@@ -6,7 +6,7 @@ export default function Page() {
         {/*<div>*/}
         {/*    пререндер производство*/}
         {/*</div>*/}
-        <CsrSsrWrapper enLan={false}/>
+        <CsrSsrWrapper enLan={true}/>
         </body>
     );
 }

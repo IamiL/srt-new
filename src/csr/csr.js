@@ -29,20 +29,20 @@ const HomeNoSSR = dynamic(() => import('@/pages/home/homePageCsr'), {ssr: false}
 const CatalogNoSSR = dynamic(() => import('@/pages/catalog/catalog'), {ssr: false})
 
 
-export default function Csr() {
+export default function Csr({enLan}) {
     return (
-        typeof document !== 'undefined' && <><BrowserRouter>
-            <Header enLan={false}/>
+        typeof document !== 'undefined' && <><BrowserRouter basename={enLan ? '/en' : ''}>
+            <Header enLan={enLan}/>
             <Routes>
-                <Route exact path="/" element={<HomeNoSSR/>}/>
-                <Route exact path="/cases" element={<Cases/>}/>
-                <Route exact path="/manufacturing" element={<Manufacturing/>}/>
-                <Route exact path="/catalog" element={<CatalogNoSSR/>}/>
-                <Route exact path="/catalog/rotary-crusher" element={<RotaryCrusher/>}/>
-                <Route exact path="/catalog/isolators" element={<Isolators/>}/>
-                <Route exact path="/catalog/drying-cabinets" element={<DryingCabinetsPage/>}/>
+                <Route exact path="/" element={<HomeNoSSR enLan={enLan}/>}/>
+                <Route exact path="/cases" element={<Cases enLan={enLan}/>}/>
+                <Route exact path="/manufacturing" element={<Manufacturing enLan={enLan}/>}/>
+                <Route exact path="/catalog" element={<CatalogNoSSR enLan={enLan}/>}/>
+                <Route exact path="/catalog/rotary-crusher" element={<RotaryCrusher enLan={enLan}/>}/>
+                <Route exact path="/catalog/isolators" element={<Isolators enLan={enLan}/>}/>
+                <Route exact path="/catalog/drying-cabinets" element={<DryingCabinetsPage enLan={enLan}/>}/>
             </Routes>
-            <Footer/>
+            <Footer enLan={enLan}/>
             {/*<RouterProvider router={router} />*/}
         </BrowserRouter>
         </>

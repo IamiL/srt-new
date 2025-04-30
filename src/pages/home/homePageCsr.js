@@ -4,7 +4,7 @@ import Home from "@/pages/home/home";
 import {useLocation} from "react-router-dom";
 import {useEffect} from "react";
 
-export default function HomePageCsr() {
+export default function HomePageCsr({enLan}) {
     if (typeof document === 'undefined') {
         return <></>
     }
@@ -26,5 +26,5 @@ export default function HomePageCsr() {
             }, 0);
         }
     }, [pathname, hash, key]);
-    return <Home/>
+    return <Home enLan={enLan}/>
 }

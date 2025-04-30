@@ -1,4 +1,4 @@
-import {useRef} from "react";
+import {useEffect, useRef} from "react";
 import {createPortal} from "react-dom";
 
 const images = [
@@ -11,6 +11,15 @@ export default function GalleryPortal({catalogNumber, item, isOpen, setIsOpen}) 
 
     const ref = useRef()
 
+    const videoRef = useRef(null)
+
+    useEffect(() => {
+        if (videoRef !== null && videoRef.current !== null) {
+            if (!isOpen) {
+                videoRef.current.pause()
+            }
+        }
+    }, [isOpen]);
     return createPortal(
         <div
             className={`catalog-modal-wrapper ${isOpen === null ? '' : isOpen ? 'catalog-modal-wrapper-gallery-open catalog-modal-wrapper-open' : 'catalog-modal-wrapper-close'}`}
@@ -39,9 +48,9 @@ export default function GalleryPortal({catalogNumber, item, isOpen, setIsOpen}) 
                 <div className='fullscreen-img'>
                     {
                         (catalogNumber === 0 && item === 5) ?
-                            <video loop height="100%" className="fullscreen-img-image">
+                            <video ref={videoRef} controls height="100%" className="fullscreen-img-image">
                                 <source src={"/video.mp4"}
-                                        type='video/quicktime'/>
+                                        type="video/mp4"/>
                             </video> :
                             <img className='fullscreen-img-image' src={images[catalogNumber][item]} alt=''/>
                     }

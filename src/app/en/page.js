@@ -4,7 +4,7 @@ import Loading from "@/components/loading/loading";
 export default function Home() {
     return (<body id='start'>
         <Loading/>
-        <CsrSsrWrapper enLan={false}/>
+        <CsrSsrWrapper enLan={true}/>
         </body>
     );
 }

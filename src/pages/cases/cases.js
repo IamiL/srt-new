@@ -3,12 +3,12 @@ import AutomationOfTechnologicalProcesses
 import EquipmentModernization from "@/components/equipmentModernization/block/equipmentModernization";
 import Background2 from "@/components/background/2/background";
 
-export default function Cases() {
+export default function Cases({enLan}) {
     return (
         <>
             <main>
-                <EquipmentModernization enLan={false}/>
-                <AutomationOfTechnologicalProcesses enLan={false}/>
+                <EquipmentModernization enLan={enLan}/>
+                <AutomationOfTechnologicalProcesses enLan={enLan}/>
             </main>
             <Background2/>
         </>
