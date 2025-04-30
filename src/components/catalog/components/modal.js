@@ -160,149 +160,149 @@ const enItems = [
         table: ''
     },
     {
-        name: 'P-180L-380',
+        name: 'P-180L-380-',
         photo: '/catalog/crusher/P-180L-380.png',
-        table: '/catalog/crusher/P-180L-380.svg'
+        table: '/catalog/crusher/P-180L-380-en.svg'
     },
     {
         name: 'P-180L-220',
         photo: '/catalog/crusher/P-180L-220.png',
-        table: '/catalog/crusher/P-180L-220.svg'
+        table: '/catalog/crusher/P-180L-220-en.svg'
     },
     {
         name: 'P-250P',
         photo: '/catalog/crusher/P-250P.png',
-        table: '/catalog/crusher/P-250P.svg'
+        table: '/catalog/crusher/P-250P-en.svg'
     },
     {
         name: 'P-250C',
         photo: '/catalog/crusher/P-250C.png',
-        table: '/catalog/crusher/P-250C.svg'
+        table: '/catalog/crusher/P-250C-en.svg'
     },
     {
         name: 'P-300L',
         photo: '/catalog/crusher/P-300L.png',
-        table: '/catalog/crusher/P-300L.svg'
+        table: '/catalog/crusher/P-300L-en.svg'
     },
     {
         name: 'P-300P',
         photo: '/catalog/crusher/P-300P.png',
-        table: '/catalog/crusher/P-300P.svg'
+        table: '/catalog/crusher/P-300P-en.svg'
     },
     {
         name: 'P-300C',
         photo: '/catalog/crusher/P-300C.png',
-        table: '/catalog/crusher/P-300C.svg'
+        table: '/catalog/crusher/P-300C-en.svg'
     },
     {
         name: 'P-400L',
         photo: '/catalog/crusher/P-400L.png',
-        table: '/catalog/crusher/P-400L.svg'
+        table: '/catalog/crusher/P-400L-en.svg'
     },
     {
         name: 'P-400P',
         photo: '/catalog/crusher/P-400P.png',
-        table: '/catalog/crusher/P-400P.svg'
+        table: '/catalog/crusher/P-400P-en.svg'
     },
     {
         name: 'P-400C',
         photo: '/catalog/crusher/P-400C.png',
-        table: '/catalog/crusher/P-400C.svg'
+        table: '/catalog/crusher/P-400C-en.svg'
     },
     {
         name: 'P-500L',
         photo: '/catalog/crusher/P-500L.png',
-        table: '/catalog/crusher/P-500L.svg'
+        table: '/catalog/crusher/P-500L-en.svg'
     },
     {
         name: 'P-500P',
         photo: '/catalog/crusher/P-500P.png',
-        table: '/catalog/crusher/P-500P.svg'
+        table: '/catalog/crusher/P-500P-en.svg'
     },
     {
         name: 'P-500C',
         photo: '/catalog/crusher/P-500C.png',
-        table: '/catalog/crusher/P-500C.svg'
+        table: '/catalog/crusher/P-500C-en.svg'
     },
     {
         name: 'P-600L',
         photo: '/catalog/crusher/P-600L.png',
-        table: '/catalog/crusher/P-600L.svg'
+        table: '/catalog/crusher/P-600L-en.svg'
     },
     {
         name: 'P-600P',
         photo: '/catalog/crusher/P-600P.png',
-        table: '/catalog/crusher/P-600P.svg'
+        table: '/catalog/crusher/P-600P-en.svg'
     },
     {
         name: 'P-600C',
         photo: '/catalog/crusher/P-600C.png',
-        table: '/catalog/crusher/P-600C.svg'
+        table: '/catalog/crusher/P-600C-en.svg'
     },
     {
         name: 'P-700L',
         photo: '/catalog/crusher/P-700L.png',
-        table: '/catalog/crusher/P-700L.svg'
+        table: '/catalog/crusher/P-700L-en.svg'
     },
     {
         name: 'P-700P',
         photo: '/catalog/crusher/P-700P.png',
-        table: '/catalog/crusher/P-700P.svg'
+        table: '/catalog/crusher/P-700P-en.svg'
     },
     {
         name: 'P-700C',
         photo: '/catalog/crusher/P-700C.png',
-        table: '/catalog/crusher/P-700C.svg'
+        table: '/catalog/crusher/P-700C-en.svg'
     },
     {
         name: 'P-800L',
         photo: '/catalog/crusher/P-800L.png',
-        table: '/catalog/crusher/P-800L.svg'
+        table: '/catalog/crusher/P-800L-en.svg'
     },
     {
         name: 'P-800P',
         photo: '/catalog/crusher/P-800P.png',
-        table: '/catalog/crusher/P-800P.svg'
+        table: '/catalog/crusher/P-800P-en.svg'
     },
     {
         name: 'P-800C',
         photo: '/catalog/crusher/P-800C.png',
-        table: '/catalog/crusher/P-800C.svg'
+        table: '/catalog/crusher/P-800C-en.svg'
     },
     {
         name: 'P-1000L',
         photo: '/catalog/crusher/P-1000L.png',
-        table: '/catalog/crusher/P-1000L.svg'
+        table: '/catalog/crusher/P-1000L-en.svg'
     },
     {
         name: 'P-1000P',
         photo: '/catalog/crusher/P-1000P.png',
-        table: '/catalog/crusher/P-1000P.svg'
+        table: '/catalog/crusher/P-1000P-en.svg'
     },
     {
         name: 'Drying cabinet — 360',
         photo: '/catalog/drying/360.png',
-        table: '/catalog/drying/360.svg'
+        table: '/catalog/drying/360-en.svg'
     },
     {
         name: 'Drying cabinet — 480',
         photo: '/catalog/drying/480.png',
-        table: '/catalog/drying/480.svg'
+        table: '/catalog/drying/480-en.svg'
     },
     {
         name: 'Drying cabinet — 576',
         photo: '/catalog/drying/576.png',
-        table: '/catalog/drying/576.svg'
+        table: '/catalog/drying/576-en.svg'
     },
     {
         name: 'Drying cabinet — 960',
         photo: '/catalog/drying/960.png',
-        table: '/catalog/drying/960.svg'
+        table: '/catalog/drying/960-en.svg'
     },
     {
         name: 'Isolators',
         photo: '/catalog/isolators/isolator.png',
-        table: '/catalog/isolators/isolators.svg'
+        table: '/catalog/isolators/isolators-en.svg'
     }
 ]
 
