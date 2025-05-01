@@ -16,10 +16,10 @@ export default function Isolators({enLan}) {
         typeof document !== 'undefined' && <>
             <h1 className='heading1 catalogp-heading'>{enLan ? 'Isolators' : 'Изоляторы'}</h1>
             <section className='base_grid catalog-main-sec'>
-                <div className='catalog_main_img2 adli'>
+                <div className='catalog_main_img3 catalog_main_img2 adli'>
                     <img src='/catalog/isolators/isolators.png'/>
                 </div>
-                <div className='catalog_main_text2 text4'>
+                <div className='catalog_main_text3 catalog_main_text2 text4'>
                     <p>
                         {enLan ? <>
                             Ceramic insulating beads are often used in the production of heating elements. They can be

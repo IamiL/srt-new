@@ -17,7 +17,11 @@ export default function DryingCabinets({enLan}) {
         typeof document !== 'undefined' && <>
             <h1 className='heading1 catalogp-heading'>{enLan ? 'Drying cabinets' : 'Сушильные шкафы'}</h1>
             <section className='base_grid catalog-main-sec'>
-                <div className='catalog_main_img2 adli'><img src='/catalog/drying/drying2.png'/></div>
+                <div className='catalog_main_img2 adli'>
+                    <img className='drying-img1' src='/catalog/drying/drying2.png'/>
+                    <img className='drying-img2' src='/catalog/drying/drying3.png'/>
+                    <img className='drying-img3' src='/catalog/drying/drying4.png'/>
+                </div>
                 <div className='catalog_main_text2 text4'>
                     <p>{enLan ? <>The cabinets are made of high quality materials and stainless steel, which guarantees
                         reliability and many years of use.
@@ -125,7 +129,7 @@ export default function DryingCabinets({enLan}) {
             <section>
                 <h2 className='head1 catalog_gal_heading'>{enLan ? 'Gallery' : 'Галерея'}</h2>
                 <ul className='base_grid'>
-                    <li className='gallery-item catalog_gal_item1'
+                    <li className='gallery-item catalog_gal_item1 gallery-item-size2'
                         onClick={() => {
                             // setModalItem(1);
                             setModal2Open(true);
@@ -135,7 +139,7 @@ export default function DryingCabinets({enLan}) {
                             ////console.log('навели на первую фотку');
                             setModal2Item(1)
                         }}><img src='/catalog/drying/gal1.png'/></li>
-                    <li className='gallery-item catalog_gal_item2' onClick={() => {
+                    <li className='gallery-item catalog_gal_item2 gallery-item-size2' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -144,7 +148,7 @@ export default function DryingCabinets({enLan}) {
                             ////console.log('навели на первую фотку');
                             setModal2Item(2)
                         }}><img src='/catalog/drying/gal2.png'/></li>
-                    <li className='gallery-item catalog_gal_item3' onClick={() => {
+                    <li className='gallery-item catalog_gal_item3 gallery-item-size2' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -153,7 +157,7 @@ export default function DryingCabinets({enLan}) {
                             ////console.log('навели на первую фотку');
                             setModal2Item(3)
                         }}><img src='/catalog/drying/gal3.png'/></li>
-                    <li className='gallery-item catalog_gal_item4' onClick={() => {
+                    <li className='gallery-item catalog_gal_item4 gallery-item-size2' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -162,7 +166,7 @@ export default function DryingCabinets({enLan}) {
                             ////console.log('навели на первую фотку');
                             setModal2Item(4)
                         }}><img src='/catalog/drying/gal4.png'/></li>
-                    <li className='gallery-item catalog_gal_item5' onClick={() => {
+                    <li className='gallery-item catalog_gal_item5 gallery-item-size2' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
@@ -171,7 +175,7 @@ export default function DryingCabinets({enLan}) {
                             ////console.log('навели на первую фотку');
                             setModal2Item(5)
                         }}><img src='/catalog/drying/gal5.png'/></li>
-                    <li className='gallery-item catalog_gal_item6' onClick={() => {
+                    <li className='gallery-item catalog_gal_item6 gallery-item-size2' onClick={() => {
                         // setModalItem(1);
                         setModal2Open(true);
                         document.body.style.overflow = "hidden";
